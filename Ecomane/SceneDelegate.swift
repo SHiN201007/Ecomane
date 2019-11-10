@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,7 +18,65 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    guard let _ = (scene as? UIWindowScene) else { return }
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    
+    // ViewControllers on TabBar
+    var viewControllers: [UIViewController] = []
+
+    // UITabBar.appearance().tintColor = bgColor
+
+    // input画面
+    if let inputViewController = UIStoryboard(name: "Input", bundle: nil).instantiateViewController(withIdentifier: "Input") as? InputViewController {
+
+      inputViewController.title = "入力"
+
+      // TabBarのアイコン
+      let tabBarIcon = UITabBarItem(title: "入力",
+                                    image: nil,
+                                    tag: 0)
+      inputViewController.tabBarItem = tabBarIcon
+
+      let inputNaviController = ECNavigationController(rootViewController: inputViewController)
+      viewControllers.append(inputNaviController)
+    }
+    
+    // calendar画面
+    if let calendarViewController = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "Calendar") as? CalendarViewController {
+
+      calendarViewController.title = "カレンダー"
+
+      // TabBarのアイコン
+      let tabBarIcon = UITabBarItem(title: "カレンダー",
+                                    image: nil,
+                                    tag: 1)
+      calendarViewController.tabBarItem = tabBarIcon
+
+      let calendarNaviController = ECNavigationController(rootViewController: calendarViewController)
+      viewControllers.append(calendarNaviController)
+    }
+    
+    // graph画面
+    if let graphViewController = UIStoryboard(name: "Graph", bundle: nil).instantiateViewController(withIdentifier: "Graph") as? GraphViewController {
+
+      graphViewController.title = "年間グラフ"
+
+      // TabBarのアイコン
+      let tabBarIcon = UITabBarItem(title: "グラフ",
+                                    image: nil,
+                                    tag: 2)
+      graphViewController.tabBarItem = tabBarIcon
+
+      let graphNaviController = ECNavigationController(rootViewController: graphViewController)
+      viewControllers.append(graphNaviController)
+    }
+    
+    let tabBarController = UITabBarController()
+    tabBarController.setViewControllers(viewControllers, animated: false)
+    tabBarController.selectedIndex = 1
+
+    self.window = UIWindow(windowScene: windowScene)
+    self.window?.rootViewController = tabBarController
+    self.window?.makeKeyAndVisible()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

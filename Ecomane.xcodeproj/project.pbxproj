@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
-		0684664F2378502B00D90D19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664E2378502B00D90D19 /* ViewController.swift */; };
-		068466522378502B00D90D19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068466502378502B00D90D19 /* Main.storyboard */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
 		068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068466552378502B00D90D19 /* LaunchScreen.storyboard */; };
 		0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0684665E2378513500D90D19 /* GoogleService-Info.plist */; };
+		0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667223785E1800D90D19 /* ECNavigationController.swift */; };
+		0684667623785E4F00D90D19 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667523785E4F00D90D19 /* InputViewController.swift */; };
+		0684667823785E5700D90D19 /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667723785E5700D90D19 /* Input.storyboard */; };
+		0684667B23785E7C00D90D19 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667A23785E7C00D90D19 /* CalendarViewController.swift */; };
+		0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667C23785E8400D90D19 /* Calendar.storyboard */; };
+		06846680237865F800D90D19 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667F237865F800D90D19 /* GraphViewController.swift */; };
+		06846682237865FF00D90D19 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06846681237865FF00D90D19 /* Graph.storyboard */; };
 		20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +27,17 @@
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0684664E2378502B00D90D19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		068466512378502B00D90D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		068466532378502B00D90D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068466562378502B00D90D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		068466582378502B00D90D19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0684665E2378513500D90D19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0684667223785E1800D90D19 /* ECNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECNavigationController.swift; sourceTree = "<group>"; };
+		0684667523785E4F00D90D19 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		0684667723785E5700D90D19 /* Input.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
+		0684667A23785E7C00D90D19 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0684667C23785E8400D90D19 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		0684667F237865F800D90D19 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		06846681237865FF00D90D19 /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
 		29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.release.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.release.xcconfig"; sourceTree = "<group>"; };
 		463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.debug.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,14 +77,51 @@
 			children = (
 				0684664A2378502B00D90D19 /* AppDelegate.swift */,
 				0684664C2378502B00D90D19 /* SceneDelegate.swift */,
-				0684664E2378502B00D90D19 /* ViewController.swift */,
-				068466502378502B00D90D19 /* Main.storyboard */,
+				0684667223785E1800D90D19 /* ECNavigationController.swift */,
+				0684667423785E3600D90D19 /* View */,
 				068466532378502B00D90D19 /* Assets.xcassets */,
 				068466552378502B00D90D19 /* LaunchScreen.storyboard */,
 				068466582378502B00D90D19 /* Info.plist */,
 				0684665E2378513500D90D19 /* GoogleService-Info.plist */,
 			);
 			path = Ecomane;
+			sourceTree = "<group>";
+		};
+		0684667423785E3600D90D19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0684667923785E5B00D90D19 /* Input */,
+				0684667E23785E9400D90D19 /* Calendar */,
+				068466832378660300D90D19 /* Graph */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0684667923785E5B00D90D19 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				0684667523785E4F00D90D19 /* InputViewController.swift */,
+				0684667723785E5700D90D19 /* Input.storyboard */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		0684667E23785E9400D90D19 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				0684667A23785E7C00D90D19 /* CalendarViewController.swift */,
+				0684667C23785E8400D90D19 /* Calendar.storyboard */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		068466832378660300D90D19 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				0684667F237865F800D90D19 /* GraphViewController.swift */,
+				06846681237865FF00D90D19 /* Graph.storyboard */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		1A5F49F3D92D665BE46BE1D7 /* Frameworks */ = {
@@ -91,7 +138,6 @@
 				463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */,
 				29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -158,7 +204,9 @@
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
-				068466522378502B00D90D19 /* Main.storyboard in Resources */,
+				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
+				0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */,
+				0684667823785E5700D90D19 /* Input.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,23 +259,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0684664F2378502B00D90D19 /* ViewController.swift in Sources */,
+				0684667B23785E7C00D90D19 /* CalendarViewController.swift in Sources */,
 				0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */,
 				0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */,
+				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
+				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,
+				0684667623785E4F00D90D19 /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		068466502378502B00D90D19 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				068466512378502B00D90D19 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		068466552378502B00D90D19 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -368,7 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.softbank.i-m-107-sin.Ecomane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -387,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.softbank.i-m-107-sin.Ecomane";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
