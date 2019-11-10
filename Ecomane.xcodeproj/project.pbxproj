@@ -13,9 +13,12 @@
 		068466522378502B00D90D19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068466502378502B00D90D19 /* Main.storyboard */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
 		068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068466552378502B00D90D19 /* LaunchScreen.storyboard */; };
+		0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0684665E2378513500D90D19 /* GoogleService-Info.plist */; };
+		20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecomane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		068466532378502B00D90D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068466562378502B00D90D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		068466582378502B00D90D19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0684665E2378513500D90D19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.release.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.release.xcconfig"; sourceTree = "<group>"; };
+		463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.debug.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				068466492378502B00D90D19 /* Ecomane */,
 				068466482378502B00D90D19 /* Products */,
+				CC677BE9E224ECC8C8FFB200 /* Pods */,
+				1A5F49F3D92D665BE46BE1D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,27 @@
 				068466532378502B00D90D19 /* Assets.xcassets */,
 				068466552378502B00D90D19 /* LaunchScreen.storyboard */,
 				068466582378502B00D90D19 /* Info.plist */,
+				0684665E2378513500D90D19 /* GoogleService-Info.plist */,
 			);
 			path = Ecomane;
+			sourceTree = "<group>";
+		};
+		1A5F49F3D92D665BE46BE1D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC677BE9E224ECC8C8FFB200 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */,
+				29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0684665B2378502B00D90D19 /* Build configuration list for PBXNativeTarget "Ecomane" */;
 			buildPhases = (
+				568956EB5E95D90C21D1129E /* [CP] Check Pods Manifest.lock */,
 				068466432378502B00D90D19 /* Sources */,
 				068466442378502B00D90D19 /* Frameworks */,
 				068466452378502B00D90D19 /* Resources */,
+				49102ECEA483E0C345704B9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
+				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
 				068466522378502B00D90D19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49102ECEA483E0C345704B9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		568956EB5E95D90C21D1129E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ecomane-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		068466432378502B00D90D19 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		0684665C2378502B00D90D19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +374,7 @@
 		};
 		0684665D2378502B00D90D19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
