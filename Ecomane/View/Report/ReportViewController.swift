@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import Firebase
 
 class ReportViewController: UIViewController {
   
@@ -19,12 +20,25 @@ class ReportViewController: UIViewController {
     super.viewDidLoad()
 
     setupPieChart()
-    // balenceLabel.text = "残高：￥\(Person.Balance ?? "0")"
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    // balenceLabel.text = "残高：￥\(Person.Balance ?? "0")"
+    getData()
+  }
+  
+  func getData() {
+    guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
+    var balance = 0
+    Firestore.User.get(uid) { (user, error) in
+
+       if let error = error {
+          print(error)
+          return
+       }
+      balance = user?.balance ?? 0
+      self.balenceLabel.text = "残金：￥\(balance)"
+    }
   }
   
   func setupPieChart() {

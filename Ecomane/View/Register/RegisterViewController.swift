@@ -23,11 +23,6 @@ class RegisterViewController: UIViewController {
 
   @IBAction func registerButton(_ sender: Any) {
     register()
-    if let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(
-      withIdentifier: "Login") as? LoginViewController {
-      vc.title = "ログイン"
-      self.navigationController?.pushViewController(vc, animated: true)
-    }
   }
   
   func register() {
@@ -39,12 +34,11 @@ class RegisterViewController: UIViewController {
       else {
         print("登録できました")
        self.setdata()
-        
-        //        Loginへ遷移
-        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        let nextView = storyboard.instantiateInitialViewController()
-        nextView!.modalPresentationStyle = .fullScreen
-        self.present(nextView!, animated: true, completion: nil)
+        if let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(
+          withIdentifier: "Login") as? LoginViewController {
+          vc.title = "ログイン"
+          self.navigationController?.pushViewController(vc, animated: true)
+        }
       }
     }
   }

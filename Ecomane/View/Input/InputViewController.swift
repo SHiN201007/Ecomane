@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class InputViewController: UIViewController {
   
@@ -16,6 +17,7 @@ class InputViewController: UIViewController {
   @IBOutlet weak var moneyField: UITextField!
   @IBOutlet weak var caterogyCollectionView: UICollectionView!
   
+  var count = 0
   //UIDatePickerを定義するための変数
   var datePicker: UIDatePicker = UIDatePicker()
   
@@ -44,15 +46,30 @@ class InputViewController: UIViewController {
   
   // 追加ボタン
   @objc func add() {
-//    Person.Balance = moneyField.text
-//    Economy.today = todayField.text
-//    Economy.categoy = categoryField.text
-//    Economy.introduce = introduceField.text
-    
-    todayField.text = ""
-    categoryField.text = ""
-    introduceField.text = ""
-    moneyField.text = ""
+    setData()
+  }
+  
+  func setData() {
+    count += 1
+    guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
+    Firestore.User.get(uid) { (user, error) in
+
+       if let error = error {
+          print(error)
+          return
+       }
+      
+      let input = Firestore.Input(id: "\(uid)\(self.count)")
+      input.days = self.todayField.text
+      input.category = self.categoryField.text
+      input.introduce = self.introduceField.text
+      input.price = self.moneyField.text
+      input.save()
+      
+      user?.balance += Int(input.price ?? "0") ?? 0
+      user?.update()
+      
+    }
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
