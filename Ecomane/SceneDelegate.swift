@@ -55,6 +55,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       viewControllers.append(calendarNaviController)
     }
     
+    // Report画面
+    if let reportViewController = UIStoryboard(name: "Report", bundle: nil).instantiateViewController(withIdentifier: "Report") as? ReportViewController {
+
+      reportViewController.title = "レポート"
+
+      // TabBarのアイコン
+      let tabBarIcon = UITabBarItem(title: "レポート",
+                                    image: nil,
+                                    tag: 2)
+      reportViewController.tabBarItem = tabBarIcon
+
+      let reportNaviController = ECNavigationController(rootViewController: reportViewController)
+      viewControllers.append(reportNaviController)
+    }
+    
     // graph画面
     if let graphViewController = UIStoryboard(name: "Graph", bundle: nil).instantiateViewController(withIdentifier: "Graph") as? GraphViewController {
 
@@ -63,7 +78,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       // TabBarのアイコン
       let tabBarIcon = UITabBarItem(title: "グラフ",
                                     image: nil,
-                                    tag: 2)
+                                    tag: 3)
       graphViewController.tabBarItem = tabBarIcon
 
       let graphNaviController = ECNavigationController(rootViewController: graphViewController)

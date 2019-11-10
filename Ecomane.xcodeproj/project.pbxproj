@@ -19,6 +19,8 @@
 		0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667C23785E8400D90D19 /* Calendar.storyboard */; };
 		06846680237865F800D90D19 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667F237865F800D90D19 /* GraphViewController.swift */; };
 		06846682237865FF00D90D19 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06846681237865FF00D90D19 /* Graph.storyboard */; };
+		0684668523786B5200D90D19 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684668423786B5200D90D19 /* ReportViewController.swift */; };
+		0684668723786B5A00D90D19 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684668623786B5A00D90D19 /* Report.storyboard */; };
 		20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		0684667C23785E8400D90D19 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		0684667F237865F800D90D19 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		06846681237865FF00D90D19 /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
+		0684668423786B5200D90D19 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		0684668623786B5A00D90D19 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.release.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.release.xcconfig"; sourceTree = "<group>"; };
 		463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.debug.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 			children = (
 				0684667923785E5B00D90D19 /* Input */,
 				0684667E23785E9400D90D19 /* Calendar */,
+				0684668823786B5E00D90D19 /* Report */,
 				068466832378660300D90D19 /* Graph */,
 			);
 			path = View;
@@ -122,6 +127,15 @@
 				06846681237865FF00D90D19 /* Graph.storyboard */,
 			);
 			path = Graph;
+			sourceTree = "<group>";
+		};
+		0684668823786B5E00D90D19 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				0684668423786B5200D90D19 /* ReportViewController.swift */,
+				0684668623786B5A00D90D19 /* Report.storyboard */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 		1A5F49F3D92D665BE46BE1D7 /* Frameworks */ = {
@@ -202,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
+				0684668723786B5A00D90D19 /* Report.storyboard in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
 				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
@@ -265,6 +280,7 @@
 				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,
 				0684667623785E4F00D90D19 /* InputViewController.swift in Sources */,
+				0684668523786B5200D90D19 /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
