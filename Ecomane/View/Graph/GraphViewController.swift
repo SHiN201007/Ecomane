@@ -7,24 +7,33 @@
 //
 
 import UIKit
+import Charts
 
 class GraphViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+  @IBOutlet weak var barChartView: BarChartView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    let unitsSold = [2000.0, 4000.0, 600.0, 300.0, 1200.0, 1600.0]
 
-    /*
-    // MARK: - Navigation
+    createBarCharts(y: unitsSold)
+  }
+  
+  private func createBarCharts(y:[Double]){
+      var dataEntries = [BarChartDataEntry]()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+      for(i,value) in y.enumerated(){
+          let dataEntry = BarChartDataEntry(x: Double(i), y: value)
+          dataEntries.append(dataEntry)
+      }
+
+      let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
+      barChartView.data = BarChartData(dataSet: chartDataSet)
+
+      //グラフの色
+      chartDataSet.colors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.8)]
+  }
 
 }
