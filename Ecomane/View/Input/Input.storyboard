@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LYs-sr-U9l">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,15 +13,120 @@
             <objects>
                 <viewController storyboardIdentifier="Input" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LYs-sr-U9l" customClass="InputViewController" customModule="Ecomane" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nI6-IF-NSf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKE-ub-XvA">
+                                <rect key="frame" x="30" y="30" width="260" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-6o-pG2">
+                                <rect key="frame" x="30" y="94" width="260" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbW-cS-Asw">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnQ-za-SGw">
+                                        <rect key="frame" x="130" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-r2-1MX">
+                                <rect key="frame" x="30" y="158" width="260" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひとこと" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-rY-rFT">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWD-0q-swc">
+                                        <rect key="frame" x="130" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-ib-Vjf">
+                                <rect key="frame" x="30" y="222" width="260" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金額" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPt-rs-KSJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mca-q6-zOl">
+                                        <rect key="frame" x="130" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-xL-PzY">
+                                <rect key="frame" x="0.0" y="286" width="320" height="282"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Rb-DI-zz5">
+                                    <size key="itemSize" width="110" height="111"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="wWz-gD-z4b">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="khP-Vr-I2B">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="110" height="111"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="LYs-sr-U9l" id="qfu-9I-9zS"/>
+                                    <outlet property="delegate" destination="LYs-sr-U9l" id="rsd-34-7BR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LQt-2k-uuz" firstAttribute="trailing" secondItem="TYL-6o-pG2" secondAttribute="trailing" constant="30" id="4dY-7a-Ei4"/>
+                            <constraint firstItem="4AP-xL-PzY" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" id="5SJ-eP-TPs"/>
+                            <constraint firstItem="LQt-2k-uuz" firstAttribute="trailing" secondItem="o9t-r2-1MX" secondAttribute="trailing" constant="30" id="F8a-Ap-QGc"/>
+                            <constraint firstItem="l3V-ib-Vjf" firstAttribute="top" secondItem="o9t-r2-1MX" secondAttribute="bottom" constant="30" id="GSh-um-pLm"/>
+                            <constraint firstItem="o9t-r2-1MX" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" constant="30" id="KJr-Mr-6qv"/>
+                            <constraint firstItem="4AP-xL-PzY" firstAttribute="bottom" secondItem="LQt-2k-uuz" secondAttribute="bottom" id="LcP-2t-GQ2"/>
+                            <constraint firstItem="RKE-ub-XvA" firstAttribute="top" secondItem="LQt-2k-uuz" secondAttribute="top" constant="30" id="Nvm-fG-TYw"/>
+                            <constraint firstItem="o9t-r2-1MX" firstAttribute="top" secondItem="TYL-6o-pG2" secondAttribute="bottom" constant="30" id="QHV-xm-EVk"/>
+                            <constraint firstItem="RKE-ub-XvA" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" constant="30" id="RBP-3q-qWa"/>
+                            <constraint firstItem="4AP-xL-PzY" firstAttribute="trailing" secondItem="LQt-2k-uuz" secondAttribute="trailing" id="V2g-bx-Utv"/>
+                            <constraint firstItem="TYL-6o-pG2" firstAttribute="top" secondItem="RKE-ub-XvA" secondAttribute="bottom" constant="30" id="Y6s-5A-Zui"/>
+                            <constraint firstItem="LQt-2k-uuz" firstAttribute="trailing" secondItem="l3V-ib-Vjf" secondAttribute="trailing" constant="30" id="ZLH-cy-T3n"/>
+                            <constraint firstItem="LQt-2k-uuz" firstAttribute="trailing" secondItem="RKE-ub-XvA" secondAttribute="trailing" constant="30" id="aqc-JO-MHh"/>
+                            <constraint firstItem="4AP-xL-PzY" firstAttribute="top" secondItem="l3V-ib-Vjf" secondAttribute="bottom" constant="30" id="eoj-bu-7DM"/>
+                            <constraint firstItem="l3V-ib-Vjf" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" constant="30" id="xWK-0G-gst"/>
+                            <constraint firstItem="TYL-6o-pG2" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" constant="30" id="yNy-H1-Poa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LQt-2k-uuz"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryField" destination="hnQ-za-SGw" id="y5A-Rt-hY8"/>
+                        <outlet property="caterogyCollectionView" destination="4AP-xL-PzY" id="xFP-P2-T0R"/>
+                        <outlet property="introduceField" destination="OWD-0q-swc" id="D16-Ug-FYa"/>
+                        <outlet property="moneyField" destination="mca-q6-zOl" id="Y0p-CJ-WI8"/>
+                        <outlet property="todayField" destination="RKE-ub-XvA" id="WwW-i9-clf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glq-sr-3xG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509" y="-110"/>
+            <point key="canvasLocation" x="508.125" y="-110.91549295774648"/>
         </scene>
     </scenes>
 </document>
