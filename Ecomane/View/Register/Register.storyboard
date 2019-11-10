@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0xF-fx-pLr">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="dNG-Z4-TWq">
+            <objects>
+                <viewController storyboardIdentifier="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0xF-fx-pLr" customClass="RegisterViewController" customModule="Ecomane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXi-in-rrr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="th5-8X-Gux">
+                                <rect key="frame" x="30" y="204" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BzY-FT-GSc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-Bp-L9E">
+                                <rect key="frame" x="30" y="264" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="432-EG-6Jx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqz-kp-0kR">
+                                <rect key="frame" x="110" y="344" width="100" height="45"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5ah-U6-GzI"/>
+                                    <constraint firstAttribute="height" constant="45" id="WuD-i7-815"/>
+                                </constraints>
+                                <state key="normal" title="登録">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButton:" destination="0xF-fx-pLr" eventType="touchUpInside" id="YE4-vO-D0c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Oqz-kp-0kR" firstAttribute="centerX" secondItem="dXi-in-rrr" secondAttribute="centerX" id="0HF-Kb-imU"/>
+                            <constraint firstItem="cCT-Bp-L9E" firstAttribute="top" secondItem="th5-8X-Gux" secondAttribute="bottom" constant="20" id="6CP-X8-8ga"/>
+                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="th5-8X-Gux" secondAttribute="trailing" constant="30" id="EdE-Is-RAS"/>
+                            <constraint firstItem="Oqz-kp-0kR" firstAttribute="top" secondItem="cCT-Bp-L9E" secondAttribute="bottom" constant="40" id="FzM-BB-aEf"/>
+                            <constraint firstItem="th5-8X-Gux" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="30" id="Gcc-iM-ngY"/>
+                            <constraint firstItem="cCT-Bp-L9E" firstAttribute="centerY" secondItem="dXi-in-rrr" secondAttribute="centerY" id="PaF-nN-wLb"/>
+                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="cCT-Bp-L9E" secondAttribute="trailing" constant="30" id="twd-z3-tCU"/>
+                            <constraint firstItem="cCT-Bp-L9E" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="30" id="vue-TU-krk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CPs-H0-e3g"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="th5-8X-Gux" id="ZsJ-y3-Qpr"/>
+                        <outlet property="passwordField" destination="cCT-Bp-L9E" id="fj7-yi-q03"/>
+                        <outlet property="registerButton" destination="Oqz-kp-0kR" id="EJZ-gs-N03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ART-ZZ-P0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="-117"/>
+        </scene>
+    </scenes>
+</document>

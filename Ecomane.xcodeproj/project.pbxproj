@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0635E6CB237883B20005045D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6CA237883B10005045D /* Model.swift */; };
+		0635E6CE2378961A0005045D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6CD2378961A0005045D /* RegisterViewController.swift */; };
+		0635E6D0237896240005045D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6CF237896240005045D /* Register.storyboard */; };
+		0635E6D3237896530005045D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6D2237896530005045D /* Login.storyboard */; };
+		0635E6D52378965D0005045D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6D42378965D0005045D /* LoginViewController.swift */; };
+		0635E6D8237896B70005045D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6D7237896B70005045D /* StartViewController.swift */; };
+		0635E6DA237896BE0005045D /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6D9237896BE0005045D /* Start.storyboard */; };
+		0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6DC2378990F0005045D /* BaseViewController.swift */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -19,11 +27,21 @@
 		0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667C23785E8400D90D19 /* Calendar.storyboard */; };
 		06846680237865F800D90D19 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667F237865F800D90D19 /* GraphViewController.swift */; };
 		06846682237865FF00D90D19 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06846681237865FF00D90D19 /* Graph.storyboard */; };
+		0684668523786B5200D90D19 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684668423786B5200D90D19 /* ReportViewController.swift */; };
+		0684668723786B5A00D90D19 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684668623786B5A00D90D19 /* Report.storyboard */; };
 		20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecomane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0635E6CA237883B10005045D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0635E6CD2378961A0005045D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0635E6CF237896240005045D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		0635E6D2237896530005045D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0635E6D42378965D0005045D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0635E6D7237896B70005045D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		0635E6D9237896BE0005045D /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		0635E6DC2378990F0005045D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +56,8 @@
 		0684667C23785E8400D90D19 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		0684667F237865F800D90D19 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		06846681237865FF00D90D19 /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
+		0684668423786B5200D90D19 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		0684668623786B5A00D90D19 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.release.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.release.xcconfig"; sourceTree = "<group>"; };
 		463576D597295136D622E2A1 /* Pods-Ecomane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.debug.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +74,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0635E6CC237883B90005045D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0635E6CA237883B10005045D /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0635E6D1237896280005045D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0635E6CD2378961A0005045D /* RegisterViewController.swift */,
+				0635E6CF237896240005045D /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		0635E6D6237896610005045D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0635E6D42378965D0005045D /* LoginViewController.swift */,
+				0635E6D2237896530005045D /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0635E6DB237896C20005045D /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				0635E6D7237896B70005045D /* StartViewController.swift */,
+				0635E6D9237896BE0005045D /* Start.storyboard */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		0684663E2378502B00D90D19 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +133,7 @@
 				0684664A2378502B00D90D19 /* AppDelegate.swift */,
 				0684664C2378502B00D90D19 /* SceneDelegate.swift */,
 				0684667223785E1800D90D19 /* ECNavigationController.swift */,
+				0635E6CC237883B90005045D /* Model */,
 				0684667423785E3600D90D19 /* View */,
 				068466532378502B00D90D19 /* Assets.xcassets */,
 				068466552378502B00D90D19 /* LaunchScreen.storyboard */,
@@ -90,8 +146,13 @@
 		0684667423785E3600D90D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0635E6DC2378990F0005045D /* BaseViewController.swift */,
+				0635E6DB237896C20005045D /* Start */,
+				0635E6D6237896610005045D /* Login */,
+				0635E6D1237896280005045D /* Register */,
 				0684667923785E5B00D90D19 /* Input */,
 				0684667E23785E9400D90D19 /* Calendar */,
+				0684668823786B5E00D90D19 /* Report */,
 				068466832378660300D90D19 /* Graph */,
 			);
 			path = View;
@@ -124,6 +185,15 @@
 			path = Graph;
 			sourceTree = "<group>";
 		};
+		0684668823786B5E00D90D19 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				0684668423786B5200D90D19 /* ReportViewController.swift */,
+				0684668623786B5A00D90D19 /* Report.storyboard */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		1A5F49F3D92D665BE46BE1D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +223,7 @@
 				068466442378502B00D90D19 /* Frameworks */,
 				068466452378502B00D90D19 /* Resources */,
 				49102ECEA483E0C345704B9F /* [CP] Embed Pods Frameworks */,
+				93AD26AE983AF1FA2C78398C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,11 +273,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
+				0684668723786B5A00D90D19 /* Report.storyboard in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
 				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
 				0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */,
 				0684667823785E5700D90D19 /* Input.storyboard in Resources */,
+				0635E6DA237896BE0005045D /* Start.storyboard in Resources */,
+				0635E6D0237896240005045D /* Register.storyboard in Resources */,
+				0635E6D3237896530005045D /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +327,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		93AD26AE983AF1FA2C78398C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,12 +351,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0635E6CE2378961A0005045D /* RegisterViewController.swift in Sources */,
 				0684667B23785E7C00D90D19 /* CalendarViewController.swift in Sources */,
 				0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */,
 				0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */,
 				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
+				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
+				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,
+				0635E6CB237883B20005045D /* Model.swift in Sources */,
 				0684667623785E4F00D90D19 /* InputViewController.swift in Sources */,
+				0635E6D52378965D0005045D /* LoginViewController.swift in Sources */,
+				0684668523786B5200D90D19 /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

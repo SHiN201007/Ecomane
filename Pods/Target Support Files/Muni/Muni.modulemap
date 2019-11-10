@@ -1,0 +1,6 @@
+framework module Muni {
+  umbrella header "Muni-umbrella.h"
+
+  export *
+  module * { export * }
+}
