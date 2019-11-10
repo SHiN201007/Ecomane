@@ -31,6 +31,20 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="PZA-PX-Ide"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="oaQ-T6-yuQ">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oaQ-T6-yuQ" id="Kkp-NA-6wB">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MMl-XG-wzJ" id="eWD-gB-MMt"/>
+                                    <outlet property="delegate" destination="MMl-XG-wzJ" id="5IF-2w-Rah"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -49,7 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="vSr-Y5-DG4"/>
                     </view>
                     <connections>
+                        <outlet property="balenceLabel" destination="Va3-pb-sTT" id="B8q-7Z-gZB"/>
                         <outlet property="pieChartsView" destination="nKx-w0-HY1" id="JKb-JU-5JQ"/>
+                        <outlet property="tableView" destination="DWz-B4-YdJ" id="JkZ-o0-0LG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTO-qX-yja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

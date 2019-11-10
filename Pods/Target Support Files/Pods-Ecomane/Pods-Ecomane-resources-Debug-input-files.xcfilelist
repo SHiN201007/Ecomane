@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Ecomane/Pods-Ecomane-resources.sh
+${PODS_ROOT}/Muni/Muni/Inbox/InboxViewCell.xib
+${PODS_ROOT}/Muni/Muni/Messages/MessagesTitleView.xib
+${PODS_ROOT}/Muni/Muni/Messages/MessageViewLeftCell.xib
+${PODS_ROOT}/Muni/Muni/Messages/MessageViewRightCell.xib

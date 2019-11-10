@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 import CalculateCalendarLogic
 
-class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class CalendarViewController: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
   
   @IBOutlet weak var calendar: FSCalendar!
   

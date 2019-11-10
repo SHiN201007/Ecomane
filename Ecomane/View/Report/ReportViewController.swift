@@ -12,10 +12,22 @@ import Charts
 class ReportViewController: UIViewController {
   
   @IBOutlet weak var pieChartsView: PieChartView!
+  @IBOutlet weak var balenceLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setupPieChart()
+    // balenceLabel.text = "残高：￥\(Person.Balance ?? "0")"
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    // balenceLabel.text = "残高：￥\(Person.Balance ?? "0")"
+  }
+  
+  func setupPieChart() {
     // 円グラフの中心に表示するタイトル
     self.pieChartsView.centerText = "今月のデータ"
     
@@ -48,4 +60,19 @@ class ReportViewController: UIViewController {
     view.addSubview(self.pieChartsView)
   }
 
+}
+
+extension ReportViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    1
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
+    return cell
+  }
+  
+}
+extension ReportViewController: UITableViewDelegate {
+  
 }

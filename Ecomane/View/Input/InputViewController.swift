@@ -25,6 +25,11 @@ class InputViewController: UIViewController {
     caterogyCollectionView.dataSource = self
     caterogyCollectionView.delegate = self
     
+    todayField.delegate = self
+    categoryField.delegate = self
+    introduceField.delegate = self
+    moneyField.delegate = self
+    
     // レイアウトを調整
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
@@ -32,6 +37,29 @@ class InputViewController: UIViewController {
     
     setToday()
     createdDone()
+    
+    let addButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(add))
+    self.navigationItem.rightBarButtonItem = addButton
+  }
+  
+  // 追加ボタン
+  @objc func add() {
+//    Person.Balance = moneyField.text
+//    Economy.today = todayField.text
+//    Economy.categoy = categoryField.text
+//    Economy.introduce = introduceField.text
+    
+    todayField.text = ""
+    categoryField.text = ""
+    introduceField.text = ""
+    moneyField.text = ""
+  }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    todayField.resignFirstResponder()
+    categoryField.resignFirstResponder()
+    introduceField.resignFirstResponder()
+    moneyField.resignFirstResponder()
   }
   
   func setToday() {
@@ -96,4 +124,19 @@ extension InputViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 20
   }
+}
+
+// keyBoard-Push-Done
+extension InputViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+    todayField.resignFirstResponder()
+    categoryField.resignFirstResponder()
+    introduceField.resignFirstResponder()
+    moneyField.resignFirstResponder()
+    
+    return true
+  }
+  
 }
