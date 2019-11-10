@@ -80,13 +80,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="wWz-gD-z4b">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="khP-Vr-I2B">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="110" height="111"/>
+                                        <size key="customSize" width="120" height="120"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

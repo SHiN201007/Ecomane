@@ -21,21 +21,31 @@ class InputViewController: UIViewController {
   //UIDatePickerを定義するための変数
   var datePicker: UIDatePicker = UIDatePicker()
   
+  var items = [["name" : "食費", "imageName" : "food"],
+               ["name" : "日用品", "imageName" : "food"],
+               ["name" : "デート", "imageName" : "food"],
+               ["name" : "交通費", "imageName" : "food"],
+               ["name" : "美容費", "imageName" : "food"],
+               ["name" : "衣類", "imageName" : "food"],
+              ]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     caterogyCollectionView.dataSource = self
     caterogyCollectionView.delegate = self
+    let nib = UINib(nibName: "CollectionViewCell", bundle: Bundle.main)
+    caterogyCollectionView.register(nib, forCellWithReuseIdentifier: "Cell")
+    // レイアウト設定
+    let layout = UICollectionViewFlowLayout()
+    layout.sectionInset = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+    layout.itemSize = CGSize(width: 100, height: 100)
+    caterogyCollectionView.collectionViewLayout = layout
     
     todayField.delegate = self
     categoryField.delegate = self
     introduceField.delegate = self
     moneyField.delegate = self
-    
-    // レイアウトを調整
-    let layout = UICollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-    caterogyCollectionView.collectionViewLayout = layout
     
     setToday()
     createdDone()
@@ -125,21 +135,22 @@ class InputViewController: UIViewController {
 }
 extension InputViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) // 表示するセルを登録(先程命名した"Cell")
-      cell.backgroundColor = .red  // セルの色
-      return cell
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let horizontalSpace : CGFloat = 20
-      let cellSize : CGFloat = self.view.bounds.width / 3 - horizontalSpace
-      return CGSize(width: cellSize, height: cellSize)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+    
+    cell.label?.text = items[indexPath.row]["name"]
+    cell.imagerView.image = UIImage(named: items[indexPath.row]["imageName"]!)
+    
+    return cell
   }
   
 }
 extension InputViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 20
+    return items.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    categoryField.text = items[indexPath.row]["name"]
   }
 }
 

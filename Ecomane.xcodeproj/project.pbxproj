@@ -15,6 +15,8 @@
 		0635E6D8237896B70005045D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6D7237896B70005045D /* StartViewController.swift */; };
 		0635E6DA237896BE0005045D /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6D9237896BE0005045D /* Start.storyboard */; };
 		0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6DC2378990F0005045D /* BaseViewController.swift */; };
+		0635E6E02378B3DF0005045D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */; };
+		0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		0635E6D7237896B70005045D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		0635E6D9237896BE0005045D /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		0635E6DC2378990F0005045D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 			children = (
 				0684667523785E4F00D90D19 /* InputViewController.swift */,
 				0684667723785E5700D90D19 /* Input.storyboard */,
+				0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */,
+				0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			files = (
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
 				0684668723786B5A00D90D19 /* Report.storyboard in Resources */,
+				0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
 				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
@@ -359,6 +366,7 @@
 				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
 				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,
+				0635E6E02378B3DF0005045D /* CollectionViewCell.swift in Sources */,
 				0635E6CB237883B20005045D /* Model.swift in Sources */,
 				0684667623785E4F00D90D19 /* InputViewController.swift in Sources */,
 				0635E6D52378965D0005045D /* LoginViewController.swift in Sources */,
