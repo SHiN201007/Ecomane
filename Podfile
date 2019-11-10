@@ -7,6 +7,8 @@ target 'Ecomane' do
 
   # Pods for Ecomane
 
-pod 'Firebase/Analytics'
+  pod 'Firebase/Analytics'
+  pod 'FSCalendar'
+  pod 'CalculateCalendarLogic'
 
 end
