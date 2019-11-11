@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9F5-mN-Lsf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9F5-mN-Lsf">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,64 +16,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp7-Pj-Mbr">
-                                <rect key="frame" x="45" y="341.5" width="230" height="45"/>
+                                <rect key="frame" x="40" y="414" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="4nJ-zv-7PJ"/>
-                                    <constraint firstAttribute="width" constant="230" id="6xj-NL-Ngt"/>
+                                    <constraint firstAttribute="height" constant="40" id="5eb-Ha-5ew"/>
                                 </constraints>
                                 <state key="normal" title="アカウントを作成">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="1BQ-RN-kFt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-tE-cCx">
-                                <rect key="frame" x="45" y="406.5" width="230" height="30"/>
+                                <rect key="frame" x="40" y="474" width="240" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="jeN-2C-7y1"/>
-                                    <constraint firstAttribute="width" constant="230" id="xnC-Xa-wxs"/>
+                                    <constraint firstAttribute="height" constant="40" id="tl6-bc-aaZ"/>
                                 </constraints>
                                 <state key="normal" title="アカウントをお持ちの方はこちら">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="DMw-ov-zd8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ようこそ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x18-5e-4em">
-                                <rect key="frame" x="45" y="97" width="230" height="25.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="usT-WB-r3o"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家計簿アプリ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZy-To-6ea">
-                                <rect key="frame" x="60" y="152.5" width="200" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="gTl-JT-V9T"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerX" secondItem="Pil-Ut-QKR" secondAttribute="centerX" id="6Iy-In-a86"/>
-                            <constraint firstItem="x18-5e-4em" firstAttribute="centerX" secondItem="Pil-Ut-QKR" secondAttribute="centerX" id="72c-Xr-3tp"/>
-                            <constraint firstItem="q97-tE-cCx" firstAttribute="centerX" secondItem="Pil-Ut-QKR" secondAttribute="centerX" id="Mvv-iP-MBI"/>
-                            <constraint firstItem="xZy-To-6ea" firstAttribute="top" secondItem="x18-5e-4em" secondAttribute="bottom" constant="30" id="Udm-N0-2TB"/>
-                            <constraint firstItem="q97-tE-cCx" firstAttribute="top" secondItem="Rp7-Pj-Mbr" secondAttribute="bottom" constant="20" id="j7f-ox-KCc"/>
-                            <constraint firstItem="xZy-To-6ea" firstAttribute="centerX" secondItem="Pil-Ut-QKR" secondAttribute="centerX" id="sXN-re-De9"/>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" constant="80" id="snu-wZ-ohO"/>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="top" secondItem="xZy-To-6ea" secondAttribute="bottom" constant="160" id="tin-PU-sj8"/>
+                            <constraint firstItem="q97-tE-cCx" firstAttribute="top" secondItem="Rp7-Pj-Mbr" secondAttribute="bottom" constant="20" id="Mnd-ja-wVJ"/>
+                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="d6b-5K-ea3"/>
+                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="q97-tE-cCx" secondAttribute="trailing" constant="40" id="hMS-eo-ml0"/>
+                            <constraint firstItem="q97-tE-cCx" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="rce-7p-qSq"/>
+                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="Rp7-Pj-Mbr" secondAttribute="trailing" constant="40" id="uhS-lL-2wo"/>
+                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" constant="150" id="zSl-oh-XMd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0NR-xn-Vl2"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="q97-tE-cCx" id="Shr-aH-1HM"/>
+                        <outlet property="registerButton" destination="Rp7-Pj-Mbr" id="xwM-aL-yxi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCl-5S-Rds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,9 +30,9 @@ class BaseViewController: UIViewController {
     } else {
       if let startViewController = UIStoryboard(name: "Start", bundle: nil).instantiateViewController(
         withIdentifier: "Start") as? StartViewController {
-        
 
         let naviController = ECNavigationController(rootViewController: startViewController)
+        naviController.setNavigationBarHidden(true, animated: false)
         // フルスクリーン設定
         naviController.modalPresentationStyle = .fullScreen
         
