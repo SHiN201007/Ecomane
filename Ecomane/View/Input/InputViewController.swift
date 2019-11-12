@@ -22,11 +22,11 @@ class InputViewController: UIViewController {
   var datePicker: UIDatePicker = UIDatePicker()
   
   var items = [["name" : "食費", "imageName" : "food"],
-               ["name" : "日用品", "imageName" : "food"],
-               ["name" : "デート", "imageName" : "food"],
-               ["name" : "交通費", "imageName" : "food"],
-               ["name" : "美容費", "imageName" : "food"],
-               ["name" : "衣類", "imageName" : "food"],
+               ["name" : "日用品", "imageName" : "daily"],
+               ["name" : "お出かけ", "imageName" : "trip"],
+               ["name" : "交通費", "imageName" : "train"],
+               ["name" : "美容費", "imageName" : "beauty"],
+               ["name" : "衣類", "imageName" : "fashion"],
               ]
   
   override func viewDidLoad() {
@@ -69,14 +69,14 @@ class InputViewController: UIViewController {
           return
        }
       
-      let input = Firestore.Input(id: "\(uid)\(self.count)")
+      let input = Firestore.Input()
       input.days = self.todayField.text
       input.category = self.categoryField.text
       input.introduce = self.introduceField.text
       input.price = self.moneyField.text
-      input.save()
       
-      user?.balance += Int(input.price ?? "0") ?? 0
+      user?.balance -= Int(input.price ?? "0") ?? 0
+      user?.inputs.insert(input)
       user?.update()
       
     }

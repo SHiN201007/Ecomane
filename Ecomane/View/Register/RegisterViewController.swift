@@ -82,6 +82,8 @@ class RegisterViewController: UIViewController {
   func setdata() {
     if let currentUser = Auth.auth().currentUser { //データが取得できなかったらスキップ。
       let user = Firestore.User(id: currentUser.uid)
+      let input = Firestore.Input()
+      user.inputs.insert(input)
       user.save()
     }
   }

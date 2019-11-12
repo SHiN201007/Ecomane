@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import Firebase
+import Pring
 
 class ReportViewController: UIViewController {
   
@@ -16,18 +17,28 @@ class ReportViewController: UIViewController {
   @IBOutlet weak var balenceLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   
+  var inputDataSouce: DataSource<Firestore.Input>?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    tableView.delegate = self
+    tableView.dataSource = self
 
     setupPieChart()
+    getListData()
+    tableView.register(UINib(nibName: "ReportTableViewCell", bundle: nil), forCellReuseIdentifier: "ReportCell")
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    getData()
+    
+    self.tableView.reloadData()
+    getBalanceData()
   }
   
-  func getData() {
+  // 残高取得
+  private func getBalanceData() {
     guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
     var balance = 0
     Firestore.User.get(uid) { (user, error) in
@@ -41,6 +52,19 @@ class ReportViewController: UIViewController {
     }
   }
   
+  // 履歴の更新
+  private func getListData() {
+    guard let uid: String = Auth.auth().currentUser?.uid else { return }
+    // あるuserが持っているbookの一覧を取得する
+    let user = Firestore.User(id: uid)
+    inputDataSouce = user.inputs.order(by: \Firestore.Input.createdAt).dataSource()
+      .onCompleted() { (snapshot, inputs) in
+        print(inputs)
+        self.tableView.reloadData()
+      }.listen()
+  }
+  
+  // 円グラフの取得
   func setupPieChart() {
     // 円グラフの中心に表示するタイトル
     self.pieChartsView.centerText = "今月のデータ"
@@ -78,15 +102,40 @@ class ReportViewController: UIViewController {
 
 extension ReportViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    1
+    return self.inputDataSouce?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell") as! ReportTableViewCell
+    
+    switch inputDataSouce?[indexPath.row].category {
+      case "食費":
+        cell.categoryImage.image = UIImage(named: "food")
+      case "日用品":
+      cell.categoryImage.image = UIImage(named: "daily")
+      case "お出かけ":
+      cell.categoryImage.image = UIImage(named: "trip")
+      case "交通費":
+        cell.categoryImage.image = UIImage(named: "train")
+      case "美容費":
+      cell.categoryImage.image = UIImage(named: "beauty")
+      case "衣類":
+      cell.categoryImage.image = UIImage(named: "fashion")
+    default:
+      break
+    }
+    
+    cell.categoryLabel.text = inputDataSouce?[indexPath.row].category
+    cell.paymentLabel.text = "支払い"
+    cell.daysLabel.text = inputDataSouce?[indexPath.row].days
+    cell.priceLabel.text = "￥\(inputDataSouce?[indexPath.row].price ?? "0")"
+    
     return cell
   }
   
 }
 extension ReportViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 75
+  }
 }

@@ -17,6 +17,8 @@
 		0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6DC2378990F0005045D /* BaseViewController.swift */; };
 		0635E6E02378B3DF0005045D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */; };
 		0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */; };
+		064AF309237A91C300DB7BB0 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF307237A91C300DB7BB0 /* ReportTableViewCell.swift */; };
+		064AF30A237A91C300DB7BB0 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF308237A91C300DB7BB0 /* ReportTableViewCell.xib */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		0635E6DC2378990F0005045D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		064AF307237A91C300DB7BB0 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		064AF308237A91C300DB7BB0 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			children = (
 				0684668423786B5200D90D19 /* ReportViewController.swift */,
 				0684668623786B5A00D90D19 /* Report.storyboard */,
+				064AF307237A91C300DB7BB0 /* ReportTableViewCell.swift */,
+				064AF308237A91C300DB7BB0 /* ReportTableViewCell.xib */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				0635E6DA237896BE0005045D /* Start.storyboard in Resources */,
 				0635E6D0237896240005045D /* Register.storyboard in Resources */,
 				0635E6D3237896530005045D /* Login.storyboard in Resources */,
+				064AF30A237A91C300DB7BB0 /* ReportTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +370,7 @@
 				0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */,
 				0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */,
 				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
+				064AF309237A91C300DB7BB0 /* ReportTableViewCell.swift in Sources */,
 				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
 				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,

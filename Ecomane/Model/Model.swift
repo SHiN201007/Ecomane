@@ -17,6 +17,7 @@ extension Firestore {
     var name: String?
     var thumbnailImage: File?
     dynamic var balance: Int = 0 // 残高
+    dynamic var inputs: NestedCollection<Input> = []
 
   }
 }
