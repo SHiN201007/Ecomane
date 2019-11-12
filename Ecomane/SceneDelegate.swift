@@ -70,20 +70,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       viewControllers.append(reportNaviController)
     }
     
-    // graph画面
-    if let graphViewController = UIStoryboard(name: "Graph", bundle: nil).instantiateViewController(withIdentifier: "Graph") as? GraphViewController {
-
-      graphViewController.title = "年間グラフ"
-
-      // TabBarのアイコン
-      let tabBarIcon = UITabBarItem(title: "グラフ",
-                                    image: nil,
-                                    tag: 3)
-      graphViewController.tabBarItem = tabBarIcon
-
-      let graphNaviController = ECNavigationController(rootViewController: graphViewController)
-      viewControllers.append(graphNaviController)
-    }
+//    // graph画面
+//    if let graphViewController = UIStoryboard(name: "Graph", bundle: nil).instantiateViewController(withIdentifier: "Graph") as? GraphViewController {
+//
+//      graphViewController.title = "年間グラフ"
+//
+//      // TabBarのアイコン
+//      let tabBarIcon = UITabBarItem(title: "グラフ",
+//                                    image: nil,
+//                                    tag: 3)
+//      graphViewController.tabBarItem = tabBarIcon
+//
+//      let graphNaviController = ECNavigationController(rootViewController: graphViewController)
+//      viewControllers.append(graphNaviController)
+//    }
     
     let tabBarController = UITabBarController()
     tabBarController.setViewControllers(viewControllers, animated: false)

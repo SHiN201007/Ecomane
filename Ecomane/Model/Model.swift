@@ -17,6 +17,13 @@ extension Firestore {
     var name: String?
     var thumbnailImage: File?
     dynamic var balance: Int = 0 // 残高
+    dynamic var foodPrice: Int = 0
+    dynamic var dailyPrice: Int = 0
+    dynamic var tripPrice: Int = 0
+    dynamic var trainPrice: Int = 0
+    dynamic var beautyPrice: Int = 0
+    dynamic var fashionPrice: Int = 0
+    
     dynamic var inputs: NestedCollection<Input> = []
 
   }

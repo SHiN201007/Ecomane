@@ -19,13 +19,19 @@ class ReportViewController: UIViewController {
   
   var inputDataSouce: DataSource<Firestore.Input>?
   
+  var foodPrice: Int?
+  var dailyPrice: Int?
+  var tripPrice: Int?
+  var trainPrice: Int?
+  var beautyPrice: Int?
+  var fashionPrice: Int?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.delegate = self
     tableView.dataSource = self
 
-    setupPieChart()
     getListData()
     tableView.register(UINib(nibName: "ReportTableViewCell", bundle: nil), forCellReuseIdentifier: "ReportCell")
   }
@@ -35,6 +41,7 @@ class ReportViewController: UIViewController {
     
     self.tableView.reloadData()
     getBalanceData()
+    setupPieChart()
   }
   
   // 残高取得
@@ -47,6 +54,14 @@ class ReportViewController: UIViewController {
           print(error)
           return
        }
+      
+      self.foodPrice = user?.foodPrice
+      self.dailyPrice = user?.dailyPrice
+      self.tripPrice = user?.tripPrice
+      self.trainPrice = user?.trainPrice
+      self.beautyPrice = user?.beautyPrice
+      self.fashionPrice = user?.fashionPrice
+      
       balance = user?.balance ?? 0
       self.balenceLabel.text = "残金：￥\(balance)"
     }
@@ -59,7 +74,6 @@ class ReportViewController: UIViewController {
     let user = Firestore.User(id: uid)
     inputDataSouce = user.inputs.order(by: \Firestore.Input.createdAt).dataSource()
       .onCompleted() { (snapshot, inputs) in
-        print(inputs)
         self.tableView.reloadData()
       }.listen()
   }
@@ -70,13 +84,28 @@ class ReportViewController: UIViewController {
     self.pieChartsView.centerText = "今月のデータ"
     
     // グラフに表示するデータのタイトルと値
-    let dataEntries = [
-      PieChartDataEntry(value: 40, label: "A"),
-      PieChartDataEntry(value: 35, label: "B"),
-      PieChartDataEntry(value: 25, label: "C")
-    ]
+    var dataEntries: [Any] = []
     
-    let dataSet = PieChartDataSet(entries: dataEntries, label: "今月のデータ")
+    if foodPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(foodPrice ?? 0), label: "食費"))
+    }
+    if dailyPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(dailyPrice ?? 0), label: "日用品"))
+    }
+    if tripPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(tripPrice ?? 0), label: "お出かけ"))
+    }
+    if trainPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(trainPrice ?? 0), label: "交通費"))
+    }
+    if beautyPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(beautyPrice ?? 0), label: "美容"))
+    }
+    if fashionPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "衣類"))
+    }
+    
+    let dataSet = PieChartDataSet(entries: dataEntries as? [ChartDataEntry], label: "データ")
 
     // グラフの色
     dataSet.colors = ChartColorTemplates.vordiplom()

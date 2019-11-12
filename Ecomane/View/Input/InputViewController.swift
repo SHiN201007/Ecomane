@@ -75,6 +75,23 @@ class InputViewController: UIViewController {
       input.introduce = self.introduceField.text
       input.price = self.moneyField.text
       
+      switch input.category {
+        case "食費":
+          user?.foodPrice += Int(input.price ?? "0") ?? 0
+        case "日用品":
+          user?.dailyPrice += Int(input.price ?? "0") ?? 0
+        case "お出かけ":
+          user?.tripPrice += Int(input.price ?? "0") ?? 0
+        case "交通費":
+          user?.trainPrice += Int(input.price ?? "0") ?? 0
+        case "美容費":
+          user?.beautyPrice += Int(input.price ?? "0") ?? 0
+        case "衣類":
+          user?.fashionPrice += Int(input.price ?? "0") ?? 0
+      default:
+        break
+      }
+      
       user?.balance -= Int(input.price ?? "0") ?? 0
       user?.inputs.insert(input)
       user?.update()
