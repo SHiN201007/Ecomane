@@ -9,16 +9,26 @@
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
+import Firebase
+import Pring
 
-class CalendarViewController: BaseViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
   
   @IBOutlet weak var calendar: FSCalendar!
   
+  var inputDataSouce: DataSource<Firestore.Input>?
+  var eventList: [String] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupCalendar()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    getListData()
   }
   
   func setupCalendar() {
@@ -97,6 +107,33 @@ class CalendarViewController: BaseViewController, FSCalendarDelegate, FSCalendar
     }
 
     return nil
+  }
+  
+  func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy年MM月dd日"
+    let dataString = formatter.string(from: date)
+    // print(dataString)
+    if (eventList.firstIndex(of: dataString) != nil) {
+        return 1
+    }else{
+      return 0
+    }
+  }
+  
+  private func getListData() {
+    guard let uid: String = Auth.auth().currentUser?.uid else { return }
+    // あるuserが持っているbookの一覧を取得する
+    let user = Firestore.User(id: uid)
+    inputDataSouce = user.inputs.order(by: \Firestore.Input.createdAt).dataSource()
+      .onCompleted() { (snapshot, inputs) in
+        for i in 0..<inputs.count{
+          let ev = self.inputDataSouce?[i].days
+          self.eventList.append(ev ?? "")
+        }
+        self.calendar.reloadData()
+//        print(self.eventList)
+      }.listen()
   }
 
 }
