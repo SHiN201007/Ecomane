@@ -19,6 +19,12 @@
 		0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */; };
 		064AF309237A91C300DB7BB0 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF307237A91C300DB7BB0 /* ReportTableViewCell.swift */; };
 		064AF30A237A91C300DB7BB0 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF308237A91C300DB7BB0 /* ReportTableViewCell.xib */; };
+		064AF314237CED4800DB7BB0 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF312237CED4800DB7BB0 /* DailyTableViewCell.swift */; };
+		064AF315237CED4800DB7BB0 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF313237CED4800DB7BB0 /* DailyTableViewCell.xib */; };
+		064AF319237CED8300DB7BB0 /* inputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF317237CED8300DB7BB0 /* inputTableViewCell.swift */; };
+		064AF31A237CED8300DB7BB0 /* inputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF318237CED8300DB7BB0 /* inputTableViewCell.xib */; };
+		064AF320237CEDCA00DB7BB0 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */; };
+		064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -50,6 +56,12 @@
 		0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		064AF307237A91C300DB7BB0 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		064AF308237A91C300DB7BB0 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
+		064AF312237CED4800DB7BB0 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		064AF313237CED4800DB7BB0 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		064AF317237CED8300DB7BB0 /* inputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputTableViewCell.swift; sourceTree = "<group>"; };
+		064AF318237CED8300DB7BB0 /* inputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inputTableViewCell.xib; sourceTree = "<group>"; };
+		064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
+		064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneTableViewCell.xib; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +129,52 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		064AF30B237CEC4600DB7BB0 /* customCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */,
+				0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */,
+			);
+			path = customCollectionCell;
+			sourceTree = "<group>";
+		};
+		064AF316237CED5100DB7BB0 /* DailyCell */ = {
+			isa = PBXGroup;
+			children = (
+				064AF312237CED4800DB7BB0 /* DailyTableViewCell.swift */,
+				064AF313237CED4800DB7BB0 /* DailyTableViewCell.xib */,
+			);
+			path = DailyCell;
+			sourceTree = "<group>";
+		};
+		064AF31B237CED9200DB7BB0 /* inputCell */ = {
+			isa = PBXGroup;
+			children = (
+				064AF317237CED8300DB7BB0 /* inputTableViewCell.swift */,
+				064AF318237CED8300DB7BB0 /* inputTableViewCell.xib */,
+			);
+			path = inputCell;
+			sourceTree = "<group>";
+		};
+		064AF322237CEDD300DB7BB0 /* DoneCell */ = {
+			isa = PBXGroup;
+			children = (
+				064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */,
+				064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */,
+			);
+			path = DoneCell;
+			sourceTree = "<group>";
+		};
+		064AF323237CEDE500DB7BB0 /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				064AF316237CED5100DB7BB0 /* DailyCell */,
+				064AF31B237CED9200DB7BB0 /* inputCell */,
+				064AF322237CEDD300DB7BB0 /* DoneCell */,
+			);
+			path = CustomTableCell;
+			sourceTree = "<group>";
+		};
 		0684663E2378502B00D90D19 = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +229,8 @@
 			children = (
 				0684667523785E4F00D90D19 /* InputViewController.swift */,
 				0684667723785E5700D90D19 /* Input.storyboard */,
-				0635E6DE2378B3DF0005045D /* CollectionViewCell.swift */,
-				0635E6DF2378B3DF0005045D /* CollectionViewCell.xib */,
+				064AF30B237CEC4600DB7BB0 /* customCollectionCell */,
+				064AF323237CEDE500DB7BB0 /* CustomTableCell */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -284,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064AF31A237CED8300DB7BB0 /* inputTableViewCell.xib in Resources */,
 				068466572378502B00D90D19 /* LaunchScreen.storyboard in Resources */,
 				0684668723786B5A00D90D19 /* Report.storyboard in Resources */,
 				0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */,
@@ -291,10 +350,12 @@
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
 				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
 				0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */,
+				064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */,
 				0684667823785E5700D90D19 /* Input.storyboard in Resources */,
 				0635E6DA237896BE0005045D /* Start.storyboard in Resources */,
 				0635E6D0237896240005045D /* Register.storyboard in Resources */,
 				0635E6D3237896530005045D /* Login.storyboard in Resources */,
+				064AF315237CED4800DB7BB0 /* DailyTableViewCell.xib in Resources */,
 				064AF30A237A91C300DB7BB0 /* ReportTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,10 +428,13 @@
 			files = (
 				0635E6CE2378961A0005045D /* RegisterViewController.swift in Sources */,
 				0684667B23785E7C00D90D19 /* CalendarViewController.swift in Sources */,
+				064AF320237CEDCA00DB7BB0 /* DoneTableViewCell.swift in Sources */,
 				0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */,
 				0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */,
 				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
 				064AF309237A91C300DB7BB0 /* ReportTableViewCell.swift in Sources */,
+				064AF319237CED8300DB7BB0 /* inputTableViewCell.swift in Sources */,
+				064AF314237CED4800DB7BB0 /* DailyTableViewCell.swift in Sources */,
 				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
 				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,

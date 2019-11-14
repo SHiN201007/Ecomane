@@ -115,8 +115,8 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
     let dataString = formatter.string(from: date)
     // print(dataString)
     if (eventList.firstIndex(of: dataString) != nil) {
-        return 1
-    }else{
+      return 1
+    }else {
       return 0
     }
   }
