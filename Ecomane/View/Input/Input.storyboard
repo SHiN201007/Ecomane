@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-xL-PzY">
-                                <rect key="frame" x="0.0" y="351" width="320" height="217"/>
+                                <rect key="frame" x="0.0" y="402" width="320" height="166"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Rb-DI-zz5">
                                     <size key="itemSize" width="110" height="111"/>
@@ -27,13 +27,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="wWz-gD-z4b">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="khP-Vr-I2B">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="120" height="120"/>
+                                        <size key="customSize" width="60" height="60"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -42,7 +42,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-oj-7LJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <rect key="frame" x="0.0" y="51" width="320" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="7DQ-u5-BGZ"/>
@@ -53,28 +53,41 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-gE-vL7">
-                                <rect key="frame" x="20" y="310" width="70" height="21"/>
+                                <rect key="frame" x="20" y="361" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uh2-K0-M2r">
+                                <rect key="frame" x="173" y="10" width="117" height="32"/>
+                                <segments>
+                                    <segment title="支払い"/>
+                                    <segment title="収入"/>
+                                </segments>
+                                <connections>
+                                    <action selector="paymentControl:" destination="LYs-sr-U9l" eventType="valueChanged" id="BHz-u2-1jK"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9cs-oj-7LJ" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" id="4FD-Sg-U2d"/>
                             <constraint firstItem="9cs-oj-7LJ" firstAttribute="trailing" secondItem="LQt-2k-uuz" secondAttribute="trailing" id="Aa3-qT-QrC"/>
+                            <constraint firstItem="9cs-oj-7LJ" firstAttribute="top" secondItem="uh2-K0-M2r" secondAttribute="bottom" constant="10" id="BdD-At-L02"/>
                             <constraint firstItem="4AP-xL-PzY" firstAttribute="trailing" secondItem="LQt-2k-uuz" secondAttribute="trailing" id="FW7-h7-p5F"/>
                             <constraint firstItem="4AP-xL-PzY" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" id="Jst-8n-tQq"/>
                             <constraint firstItem="4AP-xL-PzY" firstAttribute="top" secondItem="7YX-gE-vL7" secondAttribute="bottom" constant="20" id="MF7-VQ-sqn"/>
+                            <constraint firstItem="uh2-K0-M2r" firstAttribute="top" secondItem="LQt-2k-uuz" secondAttribute="top" constant="10" id="Taw-jt-c4N"/>
                             <constraint firstItem="7YX-gE-vL7" firstAttribute="top" secondItem="9cs-oj-7LJ" secondAttribute="bottom" constant="10" id="aIm-MO-PN7"/>
+                            <constraint firstItem="LQt-2k-uuz" firstAttribute="trailing" secondItem="uh2-K0-M2r" secondAttribute="trailing" constant="30" id="bXD-2X-fA1"/>
                             <constraint firstItem="7YX-gE-vL7" firstAttribute="leading" secondItem="LQt-2k-uuz" secondAttribute="leading" constant="20" id="hOi-Zw-ScF"/>
                             <constraint firstItem="4AP-xL-PzY" firstAttribute="bottom" secondItem="LQt-2k-uuz" secondAttribute="bottom" id="mgc-UK-3Ov"/>
-                            <constraint firstItem="9cs-oj-7LJ" firstAttribute="top" secondItem="LQt-2k-uuz" secondAttribute="top" id="nhZ-Zv-IX7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LQt-2k-uuz"/>
                     </view>
                     <connections>
                         <outlet property="caterogyCollectionView" destination="4AP-xL-PzY" id="xFP-P2-T0R"/>
+                        <outlet property="paymentController" destination="uh2-K0-M2r" id="Vhf-sF-Qar"/>
                         <outlet property="tableView" destination="9cs-oj-7LJ" id="BUP-LR-otC"/>
                     </connections>
                 </viewController>

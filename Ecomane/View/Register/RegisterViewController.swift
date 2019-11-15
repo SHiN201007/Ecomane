@@ -84,6 +84,7 @@ class RegisterViewController: UIViewController {
       let user = Firestore.User(id: currentUser.uid)
       let input = Firestore.Input()
       user.inputs.insert(input)
+      input.delete()
       user.save()
     }
   }

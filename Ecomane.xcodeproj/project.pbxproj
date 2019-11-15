@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0635E6CB237883B20005045D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6CA237883B10005045D /* Model.swift */; };
+		0635E6CB237883B20005045D /* FireStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6CA237883B10005045D /* FireStoreModel.swift */; };
 		0635E6CE2378961A0005045D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E6CD2378961A0005045D /* RegisterViewController.swift */; };
 		0635E6D0237896240005045D /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6CF237896240005045D /* Register.storyboard */; };
 		0635E6D3237896530005045D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E6D2237896530005045D /* Login.storyboard */; };
@@ -25,6 +25,7 @@
 		064AF31A237CED8300DB7BB0 /* inputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF318237CED8300DB7BB0 /* inputTableViewCell.xib */; };
 		064AF320237CEDCA00DB7BB0 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */; };
 		064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */; };
+		064AF325237E519A00DB7BB0 /* ECModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF324237E519A00DB7BB0 /* ECModel.swift */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -35,8 +36,6 @@
 		0684667823785E5700D90D19 /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667723785E5700D90D19 /* Input.storyboard */; };
 		0684667B23785E7C00D90D19 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667A23785E7C00D90D19 /* CalendarViewController.swift */; };
 		0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684667C23785E8400D90D19 /* Calendar.storyboard */; };
-		06846680237865F800D90D19 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684667F237865F800D90D19 /* GraphViewController.swift */; };
-		06846682237865FF00D90D19 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06846681237865FF00D90D19 /* Graph.storyboard */; };
 		0684668523786B5200D90D19 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684668423786B5200D90D19 /* ReportViewController.swift */; };
 		0684668723786B5A00D90D19 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0684668623786B5A00D90D19 /* Report.storyboard */; };
 		20E6081E5256F59889E78145 /* Pods_Ecomane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */; };
@@ -44,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		01E23CAC9BAEB6B3CCEB80C5 /* Pods_Ecomane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ecomane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0635E6CA237883B10005045D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0635E6CA237883B10005045D /* FireStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreModel.swift; sourceTree = "<group>"; };
 		0635E6CD2378961A0005045D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0635E6CF237896240005045D /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		0635E6D2237896530005045D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		064AF318237CED8300DB7BB0 /* inputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inputTableViewCell.xib; sourceTree = "<group>"; };
 		064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 		064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneTableViewCell.xib; sourceTree = "<group>"; };
+		064AF324237E519A00DB7BB0 /* ECModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECModel.swift; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +74,6 @@
 		0684667723785E5700D90D19 /* Input.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
 		0684667A23785E7C00D90D19 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0684667C23785E8400D90D19 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		0684667F237865F800D90D19 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		06846681237865FF00D90D19 /* Graph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
 		0684668423786B5200D90D19 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		0684668623786B5A00D90D19 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		29740300C2B5636795AF7A98 /* Pods-Ecomane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ecomane.release.xcconfig"; path = "Target Support Files/Pods-Ecomane/Pods-Ecomane.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +95,8 @@
 		0635E6CC237883B90005045D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0635E6CA237883B10005045D /* Model.swift */,
+				0635E6CA237883B10005045D /* FireStoreModel.swift */,
+				064AF324237E519A00DB7BB0 /* ECModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,7 +218,6 @@
 				0684667923785E5B00D90D19 /* Input */,
 				0684667E23785E9400D90D19 /* Calendar */,
 				0684668823786B5E00D90D19 /* Report */,
-				068466832378660300D90D19 /* Graph */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,15 +240,6 @@
 				0684667C23785E8400D90D19 /* Calendar.storyboard */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		068466832378660300D90D19 /* Graph */ = {
-			isa = PBXGroup;
-			children = (
-				0684667F237865F800D90D19 /* GraphViewController.swift */,
-				06846681237865FF00D90D19 /* Graph.storyboard */,
-			);
-			path = Graph;
 			sourceTree = "<group>";
 		};
 		0684668823786B5E00D90D19 /* Report */ = {
@@ -348,7 +337,6 @@
 				0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
-				06846682237865FF00D90D19 /* Graph.storyboard in Resources */,
 				0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */,
 				064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */,
 				0684667823785E5700D90D19 /* Input.storyboard in Resources */,
@@ -431,15 +419,15 @@
 				064AF320237CEDCA00DB7BB0 /* DoneTableViewCell.swift in Sources */,
 				0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */,
 				0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */,
-				06846680237865F800D90D19 /* GraphViewController.swift in Sources */,
 				064AF309237A91C300DB7BB0 /* ReportTableViewCell.swift in Sources */,
 				064AF319237CED8300DB7BB0 /* inputTableViewCell.swift in Sources */,
+				064AF325237E519A00DB7BB0 /* ECModel.swift in Sources */,
 				064AF314237CED4800DB7BB0 /* DailyTableViewCell.swift in Sources */,
 				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
 				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,
 				0635E6E02378B3DF0005045D /* CollectionViewCell.swift in Sources */,
-				0635E6CB237883B20005045D /* Model.swift in Sources */,
+				0635E6CB237883B20005045D /* FireStoreModel.swift in Sources */,
 				0684667623785E4F00D90D19 /* InputViewController.swift in Sources */,
 				0635E6D52378965D0005045D /* LoginViewController.swift in Sources */,
 				0684668523786B5200D90D19 /* ReportViewController.swift in Sources */,

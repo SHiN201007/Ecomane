@@ -14,16 +14,24 @@ class InputViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var caterogyCollectionView: UICollectionView!
-
+  @IBOutlet weak var paymentController: UISegmentedControl!
+  
   //UIDatePickerを定義するための変数
   var datePicker: UIDatePicker = UIDatePicker()
   
   var items = [["name" : "食費", "imageName" : "food"],
-               ["name" : "日用品", "imageName" : "daily"],
-               ["name" : "お出かけ", "imageName" : "trip"],
-               ["name" : "交通費", "imageName" : "train"],
-               ["name" : "美容費", "imageName" : "beauty"],
-               ["name" : "衣類", "imageName" : "fashion"],
+                ["name" : "日用品", "imageName" : "daily"],
+                ["name" : "お出かけ", "imageName" : "trip"],
+                ["name" : "交通費", "imageName" : "train"],
+                ["name" : "美容費", "imageName" : "beauty"],
+                ["name" : "衣類", "imageName" : "fashion"],
+                ["name" : "光熱費", "imageName" : "utility"],
+                ["name" : "保険", "imageName" : "insurance"],
+                ["name" : "通信", "imageName" : "phone"],
+                ["name" : "教育", "imageName" : "study"],
+                ["name" : "車両", "imageName" : "car"],
+                ["name" : "税金", "imageName" : "tax"],
+                ["name" : "家賃", "imageName" : "house"]
               ]
   
   let selection = ["日付", "入力", " "] // セクション名
@@ -41,6 +49,7 @@ class InputViewController: UIViewController {
   var category: String?
   var introduce: String?
   var price: String?
+  var payment: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,6 +59,7 @@ class InputViewController: UIViewController {
     caterogyCollectionView.delegate = self
     let nib = UINib(nibName: "CollectionViewCell", bundle: Bundle.main)
     caterogyCollectionView.register(nib, forCellWithReuseIdentifier: "Cell")
+    caterogyCollectionView.isHidden = true
     
     // tableView init
     tableView.dataSource = self
@@ -64,14 +74,19 @@ class InputViewController: UIViewController {
     // レイアウト設定
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
-    layout.itemSize = CGSize(width: 100, height: 100)
+    layout.itemSize = CGSize(width: 70, height: 70)
     caterogyCollectionView.collectionViewLayout = layout
     
     setToday()
     createdDone()
-    
-//    let addButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(add))
-//    self.navigationItem.rightBarButtonItem = addButton
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    caterogyCollectionView.isHidden = true
+    categoryField?.text = ""
+    introduceField?.text = ""
+    moneyField?.text = ""
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -95,6 +110,7 @@ class InputViewController: UIViewController {
       input.category = self.category
       input.introduce = self.introduce
       input.price = self.price
+      input.payment = self.payment
 
       switch input.category {
         case "食費":
@@ -109,15 +125,39 @@ class InputViewController: UIViewController {
           user?.beautyPrice += Int(input.price ?? "0") ?? 0
         case "衣類":
           user?.fashionPrice += Int(input.price ?? "0") ?? 0
+        case "光熱費":
+          user?.utilityPrice += Int(input.price ?? "0") ?? 0
+        case "保険":
+          user?.insurancePrice += Int(input.price ?? "0") ?? 0
+        case "通信":
+          user?.phonePrice += Int(input.price ?? "0") ?? 0
+        case "教育":
+          user?.studyPrice += Int(input.price ?? "0") ?? 0
+        case "車両":
+          user?.carPrice += Int(input.price ?? "0") ?? 0
+        case "税金":
+          user?.taxPrice += Int(input.price ?? "0") ?? 0
+        case "家賃":
+        user?.housePrice += Int(input.price ?? "0") ?? 0
       default:
         break
       }
-
-      user?.balance -= Int(input.price ?? "0") ?? 0
+      
+      if self.payment == "支払い" {
+        user?.balance -= Int(input.price ?? "0") ?? 0
+      }else {
+        user?.balance += Int(input.price ?? "0") ?? 0
+      }
+      
       user?.inputs.insert(input)
       user?.update()
       
       print("成功")
+      
+      self.caterogyCollectionView.isHidden = true
+      self.categoryField?.text = ""
+      self.introduceField?.text = ""
+      self.moneyField?.text = ""
     }
   }
   
@@ -157,6 +197,38 @@ class InputViewController: UIViewController {
     todayField?.text = "\(formatter.string(from: datePicker.date))"
   }
   
+  @IBAction func paymentControl(_ sender: UISegmentedControl) {
+    switch sender.selectedSegmentIndex {
+    case 0:
+      payment = "支払い"
+      items = [["name" : "食費", "imageName" : "food"],
+       ["name" : "日用品", "imageName" : "daily"],
+       ["name" : "お出かけ", "imageName" : "trip"],
+       ["name" : "交通費", "imageName" : "train"],
+       ["name" : "美容費", "imageName" : "beauty"],
+       ["name" : "衣類", "imageName" : "fashion"],
+       ["name" : "光熱費", "imageName" : "utility"],
+       ["name" : "保険", "imageName" : "insurance"],
+       ["name" : "通信", "imageName" : "phone"],
+       ["name" : "教育", "imageName" : "study"],
+       ["name" : "車両", "imageName" : "car"],
+       ["name" : "税金", "imageName" : "tax"],
+       ["name" : "家賃", "imageName" : "house"]
+      ]
+      caterogyCollectionView.reloadData()
+      
+    case 1:
+      payment = "収入"
+      items = [["name" : "給料", "imageName" : "salary"],
+       ["name" : "臨時収入", "imageName" : "bigSalary"] 
+      ]
+      caterogyCollectionView.reloadData()
+    default:
+      break
+    }
+  }
+  
+  
 }
 
 //MARK:- TableView Delegate
@@ -172,7 +244,7 @@ extension InputViewController: UITableViewDelegate {
       case 1:
         switch indexPath.row {
           case 0:
-            break
+            caterogyCollectionView.isHidden = false
           case 1:
             introduceField?.becomeFirstResponder()
           case 2:

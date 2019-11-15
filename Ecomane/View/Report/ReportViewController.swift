@@ -25,6 +25,14 @@ class ReportViewController: UIViewController {
   var trainPrice: Int?
   var beautyPrice: Int?
   var fashionPrice: Int?
+  var utilityPrice: Int?
+  var insurancePrice: Int?
+  var phonePrice: Int?
+  var studyPrice: Int?
+  var carPrice: Int?
+  var taxPrice: Int?
+  var housePrice: Int?
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,6 +69,12 @@ class ReportViewController: UIViewController {
       self.trainPrice = user?.trainPrice
       self.beautyPrice = user?.beautyPrice
       self.fashionPrice = user?.fashionPrice
+      self.utilityPrice = user?.utilityPrice
+      self.insurancePrice = user?.insurancePrice
+      self.phonePrice = user?.phonePrice
+      self.studyPrice = user?.studyPrice
+      self.carPrice = user?.carPrice
+      self.taxPrice = user?.taxPrice
       
       balance = user?.balance ?? 0
       self.balenceLabel.text = "残金：￥\(balance)"
@@ -81,7 +95,7 @@ class ReportViewController: UIViewController {
   // 円グラフの取得
   func setupPieChart() {
     // 円グラフの中心に表示するタイトル
-    self.pieChartsView.centerText = "今月のデータ"
+    self.pieChartsView.centerText = "今月の使用率"
     
     // グラフに表示するデータのタイトルと値
     var dataEntries: [Any] = []
@@ -103,6 +117,27 @@ class ReportViewController: UIViewController {
     }
     if fashionPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "衣類"))
+    }
+    if utilityPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(foodPrice ?? 0), label: "光熱費"))
+    }
+    if insurancePrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(dailyPrice ?? 0), label: "保険"))
+    }
+    if phonePrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(tripPrice ?? 0), label: "通信"))
+    }
+    if studyPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(trainPrice ?? 0), label: "教育"))
+    }
+    if carPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(beautyPrice ?? 0), label: "車両"))
+    }
+    if taxPrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "税金"))
+    }
+    if housePrice ?? 0 > 0 {
+      dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "家賃"))
     }
     
     let dataSet = PieChartDataSet(entries: dataEntries as? [ChartDataEntry], label: "データ")
@@ -137,25 +172,20 @@ extension ReportViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell") as! ReportTableViewCell
     
-    switch inputDataSouce?[indexPath.row].category {
-      case "食費":
-        cell.categoryImage.image = UIImage(named: "food")
-      case "日用品":
-      cell.categoryImage.image = UIImage(named: "daily")
-      case "お出かけ":
-      cell.categoryImage.image = UIImage(named: "trip")
-      case "交通費":
-        cell.categoryImage.image = UIImage(named: "train")
-      case "美容費":
-      cell.categoryImage.image = UIImage(named: "beauty")
-      case "衣類":
-      cell.categoryImage.image = UIImage(named: "fashion")
-    default:
-      break
-    }
+    categorizeImage(getCategory: inputDataSouce?[indexPath.row].category ?? "", cell:  cell) // 画像
     
     cell.categoryLabel.text = inputDataSouce?[indexPath.row].category
-    cell.paymentLabel.text = "支払い"
+    cell.paymentLabel.text = inputDataSouce?[indexPath.row].payment
+    
+    switch inputDataSouce?[indexPath.row].payment {
+      case "支払い":
+        cell.paymentLabel.textColor = .red
+      case "収入":
+        cell.paymentLabel.textColor = .blue
+      default:
+        break
+    }
+    
     cell.daysLabel.text = inputDataSouce?[indexPath.row].days
     cell.priceLabel.text = "￥\(inputDataSouce?[indexPath.row].price ?? "0")"
     
@@ -166,5 +196,9 @@ extension ReportViewController: UITableViewDataSource {
 extension ReportViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 75
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
   }
 }
