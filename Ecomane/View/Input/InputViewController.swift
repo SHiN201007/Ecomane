@@ -54,6 +54,13 @@ class InputViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    payment = "支払い"
+    
+    todayField?.delegate = self
+    categoryField?.delegate = self
+    introduceField?.delegate = self
+    moneyField?.delegate = self
+    
     // collectionView init
     caterogyCollectionView.dataSource = self
     caterogyCollectionView.delegate = self
@@ -64,6 +71,7 @@ class InputViewController: UIViewController {
     // tableView init
     tableView.dataSource = self
     tableView.delegate = self
+    self.tableView.tableFooterView = UIView() 
     var tableCellNib = UINib(nibName: "DailyTableViewCell", bundle: Bundle.main)
     tableView.register(tableCellNib, forCellReuseIdentifier: "dailyCell")
     tableCellNib = UINib(nibName: "inputTableViewCell", bundle: Bundle.main)
@@ -198,6 +206,7 @@ class InputViewController: UIViewController {
   }
   
   @IBAction func paymentControl(_ sender: UISegmentedControl) {
+    
     switch sender.selectedSegmentIndex {
     case 0:
       payment = "支払い"
@@ -213,15 +222,15 @@ class InputViewController: UIViewController {
        ["name" : "教育", "imageName" : "study"],
        ["name" : "車両", "imageName" : "car"],
        ["name" : "税金", "imageName" : "tax"],
-       ["name" : "家賃", "imageName" : "house"]
-      ]
+       ["name" : "家賃", "imageName" : "house"]]
+      
       caterogyCollectionView.reloadData()
       
     case 1:
       payment = "収入"
       items = [["name" : "給料", "imageName" : "salary"],
-       ["name" : "臨時収入", "imageName" : "bigSalary"] 
-      ]
+       ["name" : "臨時収入", "imageName" : "bigSalary"]]
+      
       caterogyCollectionView.reloadData()
     default:
       break
@@ -271,6 +280,10 @@ extension InputViewController: UITableViewDelegate {
       let header = view as! UITableViewHeaderFooterView
       // テキスト色を変更する
       header.textLabel?.textColor = .white
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 35
   }
 
   
@@ -331,8 +344,10 @@ extension InputViewController: UITableViewDataSource {
         categoryField?.borderStyle = .none
       case 1:
         introduceField = cell.inputTextField
+        introduceField?.placeholder = "ex): 晩御飯・スーパー"
       case 2:
         moneyField = cell.inputTextField
+        moneyField?.placeholder = "ex): ¥2500"
         moneyField?.keyboardType = .numberPad
       default:
         break
@@ -380,17 +395,14 @@ extension InputViewController: UICollectionViewDelegate {
   }
 }
 
-//MARK:- TextField Delegate
 extension InputViewController: UITextFieldDelegate {
-
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
+    
     todayField?.resignFirstResponder()
     categoryField?.resignFirstResponder()
     introduceField?.resignFirstResponder()
     moneyField?.resignFirstResponder()
-
+    
     return true
   }
-
 }

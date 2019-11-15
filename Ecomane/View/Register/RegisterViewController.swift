@@ -18,6 +18,9 @@ class RegisterViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    emailField.delegate = self
+    passwordField.delegate = self
 
     assignbackground()
     customCSS()
@@ -88,4 +91,17 @@ class RegisterViewController: UIViewController {
       user.save()
     }
   }
+}
+
+//MARK:- TextField Delegate
+extension RegisterViewController: UITextFieldDelegate {
+
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+    emailField.resignFirstResponder()
+    passwordField.resignFirstResponder()
+
+    return true
+  }
+
 }

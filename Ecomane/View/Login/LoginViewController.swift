@@ -19,6 +19,9 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    emailField.delegate = self
+    passwordField.delegate = self
+    
     assignbackground()
     customCSS()
   }
@@ -76,4 +79,17 @@ class LoginViewController: UIViewController {
     }
   }
   
+}
+
+//MARK:- TextField Delegate
+extension LoginViewController: UITextFieldDelegate {
+
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+    emailField.resignFirstResponder()
+    passwordField.resignFirstResponder()
+
+    return true
+  }
+
 }
