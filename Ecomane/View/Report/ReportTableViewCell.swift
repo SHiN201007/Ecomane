@@ -15,6 +15,8 @@ class ReportTableViewCell: UITableViewCell {
   @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var paymentLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var introduceLabel: UILabel!
+  
   
     override func awakeFromNib() {
         super.awakeFromNib()

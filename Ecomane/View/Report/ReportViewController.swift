@@ -186,6 +186,12 @@ extension ReportViewController: UITableViewDataSource {
         break
     }
     
+    if inputDataSouce?[indexPath.row].introduce == "" {
+      cell.introduceLabel.text = "コメントなし"
+      cell.introduceLabel.textColor = .lightGray
+    }
+    
+    cell.introduceLabel.text = inputDataSouce?[indexPath.row].introduce
     cell.daysLabel.text = inputDataSouce?[indexPath.row].days
     cell.priceLabel.text = "￥\(inputDataSouce?[indexPath.row].price ?? "0")"
     
