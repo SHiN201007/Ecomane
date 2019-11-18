@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PKHUD
 
 class RegisterViewController: UIViewController {
 
@@ -65,14 +66,17 @@ class RegisterViewController: UIViewController {
   
   
   func register() {
-   Auth.auth().createUser(withEmail: emailField.text ?? "", password: passwordField.text ?? "") { (user, error) in
-    
+    Auth.auth().createUser(withEmail: emailField.text ?? "", password: passwordField.text ?? "") { (user, error) in
+      HUD.show(.progress)
       if error != nil {
         print("登録できませんでした")
+        HUD.show(.error)
+        HUD.hide(afterDelay: 1.0)
       }
       else {
         print("登録できました")
-       self.setdata()
+        HUD.flash(.success, delay: 1.0)
+        self.setdata()
         if let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(
           withIdentifier: "Login") as? LoginViewController {
           vc.title = "ログイン"

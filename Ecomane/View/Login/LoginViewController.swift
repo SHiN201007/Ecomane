@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PKHUD
 
 class LoginViewController: UIViewController {
   
@@ -64,19 +65,23 @@ class LoginViewController: UIViewController {
   }
   
   func login() {
+    HUD.show(.progress)
     Auth.auth().signIn(withEmail: emailField.text ?? "", password: passwordField.text ?? "") { (user, error) in
-
       if error != nil {
         print("ログインできませんでした")
+        HUD.show(.error)
+        HUD.hide(afterDelay: 1.0)
       }
       else {
         print("ログインできました")
+        HUD.flash(.success, delay: 1.0)
         //UserDefaultsに値を登録
         let loginID = 1
         UserDefaults.standard.set(loginID, forKey: "loginID")
         self.dismiss(animated: true, completion: nil)
       }
     }
+    
   }
   
 }

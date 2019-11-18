@@ -142,6 +142,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - PKHUD (5.3.0)
   - Pring (0.17.3):
     - Firebase
     - Firebase/Firestore
@@ -164,6 +165,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FSCalendar
   - Muni
+  - PKHUD
   - Pring
   - RealmSwift
 
@@ -194,6 +196,7 @@ SPEC REPOS:
     - leveldb-library
     - Muni
     - nanopb
+    - PKHUD
     - Pring
     - Protobuf
     - Realm
@@ -226,12 +229,13 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   Muni: f695a9192263e93685ebf67b8df70804f850bfdc
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   Pring: ac768bc5785560c8c98191eeb85a1a900b6d86d0
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   Toolbar: 49165b7511132c7faee4883ad4f40ad5e8945225
 
-PODFILE CHECKSUM: 9e4ef1389354a872fdb9adb2bcff921712a9776b
+PODFILE CHECKSUM: 223a24f5bca63705d0e0b58fa5d9474acfa4212c
 
 COCOAPODS: 1.7.5

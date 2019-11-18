@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PKHUD
 
 class InputViewController: UIViewController {
   
@@ -159,8 +160,7 @@ class InputViewController: UIViewController {
       
       user?.inputs.insert(input)
       user?.update()
-      
-      print("成功")
+      HUD.flash(.success, delay: 1.0)
       
       self.caterogyCollectionView.isHidden = true
       self.categoryField?.text = ""
@@ -265,6 +265,14 @@ extension InputViewController: UITableViewDelegate {
         today = todayField?.text
         introduce = introduceField?.text
         price = moneyField?.text
+        
+        if categoryField?.text == "" {
+          HUD.flash(.label("カテゴリを入力してください"), delay: 1.0)
+          break
+        }else if moneyField?.text == "" {
+          HUD.flash(.label("金額を入力してください"), delay: 1.0)
+          break
+        }
         
         setData()
       default:

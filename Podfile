@@ -9,6 +9,8 @@ def install_pods
   pod 'Firebase/Analytics'
   pod 'CalculateCalendarLogic'
   
+  pod 'PKHUD'
+  
   pod 'FSCalendar'
   pod 'Charts'
   
