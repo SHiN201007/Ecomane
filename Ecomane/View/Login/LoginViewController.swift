@@ -26,13 +26,18 @@ class LoginViewController: UIViewController {
     assignbackground()
     customCSS()
   }
+  
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    emailField.resignFirstResponder()
+    passwordField.resignFirstResponder()
+  }
 
   @IBAction func loginButton(_ sender: Any) {
     login()
   }
   
   func assignbackground(){
-      let background = UIImage(named: "harinezumi")
+      let background = UIImage(named: "bgImage3")
 
       var imageView : UIImageView!
       imageView = UIImageView(frame: view.bounds)

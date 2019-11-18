@@ -27,8 +27,13 @@ class RegisterViewController: UIViewController {
     customCSS()
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    emailField.resignFirstResponder()
+    passwordField.resignFirstResponder()
+  }
+  
   func assignbackground(){
-      let background = UIImage(named: "harinezumi")
+      let background = UIImage(named: "bgImage3")
 
       var imageView : UIImageView!
       imageView = UIImageView(frame: view.bounds)
@@ -87,13 +92,17 @@ class RegisterViewController: UIViewController {
   }
   
   func setdata() {
-    if let currentUser = Auth.auth().currentUser { //データが取得できなかったらスキップ。
-      let user = Firestore.User(id: currentUser.uid)
-      let input = Firestore.Input()
-      user.inputs.insert(input)
-      input.delete()
-      user.save()
+    HUD.show(.progress)
+      Auth.auth().currentUser?.sendEmailVerification { (error) in
+        if let currentUser = Auth.auth().currentUser {
+        let user = Firestore.User(id: currentUser.uid)
+        let input = Firestore.Input()
+        user.inputs.insert(input)
+        input.delete()
+        user.save()
+      }
     }
+    HUD.flash(.success, delay: 1.0)
   }
 }
 

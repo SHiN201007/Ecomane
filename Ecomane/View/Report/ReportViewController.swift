@@ -10,6 +10,7 @@ import UIKit
 import Charts
 import Firebase
 import Pring
+import PKHUD
 
 class ReportViewController: UIViewController {
   
@@ -54,6 +55,7 @@ class ReportViewController: UIViewController {
   
   // 残高取得
   private func getBalanceData() {
+    HUD.show(.progress)
     guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
     var balance = 0
     Firestore.User.get(uid) { (user, error) in
@@ -78,17 +80,20 @@ class ReportViewController: UIViewController {
       
       balance = user?.balance ?? 0
       self.balenceLabel.text = "残金：￥\(balance)"
+      HUD.hide()
     }
   }
   
   // 履歴の更新
   private func getListData() {
+    HUD.show(.progress)
     guard let uid: String = Auth.auth().currentUser?.uid else { return }
     // あるuserが持っているbookの一覧を取得する
     let user = Firestore.User(id: uid)
     inputDataSouce = user.inputs.order(by: \Firestore.Input.createdAt).dataSource()
       .onCompleted() { (snapshot, inputs) in
         self.tableView.reloadData()
+        HUD.hide()
       }.listen()
   }
   

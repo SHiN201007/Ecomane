@@ -14,6 +14,7 @@ class StartViewController: UIViewController {
   @IBOutlet weak var registerButton: UIButton!
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var guests: UIButton!
+  @IBOutlet weak var resetPassWord: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +24,7 @@ class StartViewController: UIViewController {
   }
   
   func assignbackground(){
-      let background = UIImage(named: "bgImage1")
+      let background = UIImage(named: "bgImage3")
 
       var imageView : UIImageView!
       imageView = UIImageView(frame: view.bounds)
@@ -86,5 +87,14 @@ class StartViewController: UIViewController {
       }
     }
   }
+  
+  @IBAction func reset(_ sender: Any) {
+    if let vc = UIStoryboard(name: "ResetPassWord", bundle: nil).instantiateViewController(
+      withIdentifier: "ResetPassWord") as? ResetPassWordViewController {
+      vc.title = "パスワードを忘れた方"
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
+  }
+  
   
 }

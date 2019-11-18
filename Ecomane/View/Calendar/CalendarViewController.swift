@@ -23,12 +23,21 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
     super.viewDidLoad()
     
     setupCalendar()
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "設定", style: .done, target: self, action: #selector(appSetting))
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     getListData()
+  }
+  
+  @objc func appSetting() {
+    if let vc = UIStoryboard(name: "AppSetting", bundle: nil).instantiateViewController(
+      withIdentifier: "AppSetting") as? AppSettingViewController {
+      vc.title = "設定"
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
   
   func setupCalendar() {

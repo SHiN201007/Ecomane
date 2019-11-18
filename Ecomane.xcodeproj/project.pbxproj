@@ -26,6 +26,10 @@
 		064AF320237CEDCA00DB7BB0 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */; };
 		064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */; };
 		064AF325237E519A00DB7BB0 /* ECModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF324237E519A00DB7BB0 /* ECModel.swift */; };
+		064AF32B2382480500DB7BB0 /* AppSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF32A2382480500DB7BB0 /* AppSettingViewController.swift */; };
+		064AF32D2382481300DB7BB0 /* AppSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064AF32C2382481300DB7BB0 /* AppSetting.storyboard */; };
+		064AF330238269F000DB7BB0 /* ResetPassWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064AF32F238269F000DB7BB0 /* ResetPassWord.storyboard */; };
+		064AF332238269F900DB7BB0 /* ResetPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064AF331238269F900DB7BB0 /* ResetPassWordViewController.swift */; };
 		0684664B2378502B00D90D19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664A2378502B00D90D19 /* AppDelegate.swift */; };
 		0684664D2378502B00D90D19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0684664C2378502B00D90D19 /* SceneDelegate.swift */; };
 		068466542378502B00D90D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068466532378502B00D90D19 /* Assets.xcassets */; };
@@ -62,6 +66,10 @@
 		064AF31E237CEDCA00DB7BB0 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 		064AF31F237CEDCA00DB7BB0 /* DoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneTableViewCell.xib; sourceTree = "<group>"; };
 		064AF324237E519A00DB7BB0 /* ECModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECModel.swift; sourceTree = "<group>"; };
+		064AF32A2382480500DB7BB0 /* AppSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingViewController.swift; sourceTree = "<group>"; };
+		064AF32C2382481300DB7BB0 /* AppSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppSetting.storyboard; sourceTree = "<group>"; };
+		064AF32F238269F000DB7BB0 /* ResetPassWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassWord.storyboard; sourceTree = "<group>"; };
+		064AF331238269F900DB7BB0 /* ResetPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassWordViewController.swift; sourceTree = "<group>"; };
 		068466472378502B00D90D19 /* Ecomane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecomane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0684664A2378502B00D90D19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0684664C2378502B00D90D19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +182,24 @@
 			path = CustomTableCell;
 			sourceTree = "<group>";
 		};
+		064AF32E2382481A00DB7BB0 /* AppSetting */ = {
+			isa = PBXGroup;
+			children = (
+				064AF32A2382480500DB7BB0 /* AppSettingViewController.swift */,
+				064AF32C2382481300DB7BB0 /* AppSetting.storyboard */,
+			);
+			path = AppSetting;
+			sourceTree = "<group>";
+		};
+		064AF333238269FD00DB7BB0 /* ResetPassWord */ = {
+			isa = PBXGroup;
+			children = (
+				064AF331238269F900DB7BB0 /* ResetPassWordViewController.swift */,
+				064AF32F238269F000DB7BB0 /* ResetPassWord.storyboard */,
+			);
+			path = ResetPassWord;
+			sourceTree = "<group>";
+		};
 		0684663E2378502B00D90D19 = {
 			isa = PBXGroup;
 			children = (
@@ -213,11 +239,13 @@
 			children = (
 				0635E6DC2378990F0005045D /* BaseViewController.swift */,
 				0635E6DB237896C20005045D /* Start */,
+				064AF333238269FD00DB7BB0 /* ResetPassWord */,
 				0635E6D6237896610005045D /* Login */,
 				0635E6D1237896280005045D /* Register */,
 				0684667923785E5B00D90D19 /* Input */,
 				0684667E23785E9400D90D19 /* Calendar */,
 				0684668823786B5E00D90D19 /* Report */,
+				064AF32E2382481A00DB7BB0 /* AppSetting */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,7 +364,9 @@
 				0684668723786B5A00D90D19 /* Report.storyboard in Resources */,
 				0635E6E12378B3DF0005045D /* CollectionViewCell.xib in Resources */,
 				0684665F2378513500D90D19 /* GoogleService-Info.plist in Resources */,
+				064AF330238269F000DB7BB0 /* ResetPassWord.storyboard in Resources */,
 				068466542378502B00D90D19 /* Assets.xcassets in Resources */,
+				064AF32D2382481300DB7BB0 /* AppSetting.storyboard in Resources */,
 				0684667D23785E8400D90D19 /* Calendar.storyboard in Resources */,
 				064AF321237CEDCA00DB7BB0 /* DoneTableViewCell.xib in Resources */,
 				0684667823785E5700D90D19 /* Input.storyboard in Resources */,
@@ -423,6 +453,8 @@
 				064AF319237CED8300DB7BB0 /* inputTableViewCell.swift in Sources */,
 				064AF325237E519A00DB7BB0 /* ECModel.swift in Sources */,
 				064AF314237CED4800DB7BB0 /* DailyTableViewCell.swift in Sources */,
+				064AF332238269F900DB7BB0 /* ResetPassWordViewController.swift in Sources */,
+				064AF32B2382480500DB7BB0 /* AppSettingViewController.swift in Sources */,
 				0635E6DD2378990F0005045D /* BaseViewController.swift in Sources */,
 				0635E6D8237896B70005045D /* StartViewController.swift in Sources */,
 				0684667323785E1800D90D19 /* ECNavigationController.swift in Sources */,

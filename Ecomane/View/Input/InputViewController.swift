@@ -160,7 +160,7 @@ class InputViewController: UIViewController {
       
       user?.inputs.insert(input)
       user?.update()
-      HUD.flash(.success, delay: 1.0)
+      HUD.flash(.success, delay: 1.5)
       
       self.caterogyCollectionView.isHidden = true
       self.categoryField?.text = ""
