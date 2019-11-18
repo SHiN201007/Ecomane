@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKx-w0-HY1" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="88" width="240" height="200"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残金：￥0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va3-pb-sTT">
@@ -39,13 +39,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nKx-w0-HY1" firstAttribute="top" secondItem="Va3-pb-sTT" secondAttribute="bottom" constant="30" id="2aK-r9-zpr"/>
+                            <constraint firstItem="nKx-w0-HY1" firstAttribute="top" secondItem="Va3-pb-sTT" secondAttribute="bottom" constant="10" id="2aK-r9-zpr"/>
                             <constraint firstItem="DWz-B4-YdJ" firstAttribute="leading" secondItem="vSr-Y5-DG4" secondAttribute="leading" id="3UH-U8-Q9Y"/>
                             <constraint firstItem="Va3-pb-sTT" firstAttribute="top" secondItem="vSr-Y5-DG4" secondAttribute="top" constant="30" id="3cj-c2-ZgA"/>
                             <constraint firstItem="DWz-B4-YdJ" firstAttribute="bottom" secondItem="vSr-Y5-DG4" secondAttribute="bottom" id="klx-1s-nvP"/>
-                            <constraint firstItem="nKx-w0-HY1" firstAttribute="leading" secondItem="vSr-Y5-DG4" secondAttribute="leading" constant="40" id="krA-kY-gQK"/>
-                            <constraint firstItem="vSr-Y5-DG4" firstAttribute="trailing" secondItem="nKx-w0-HY1" secondAttribute="trailing" constant="40" id="tdt-bL-EoG"/>
-                            <constraint firstItem="DWz-B4-YdJ" firstAttribute="top" secondItem="nKx-w0-HY1" secondAttribute="bottom" constant="30" id="vkj-WC-QcJ"/>
+                            <constraint firstItem="nKx-w0-HY1" firstAttribute="leading" secondItem="vSr-Y5-DG4" secondAttribute="leading" id="krA-kY-gQK"/>
+                            <constraint firstItem="vSr-Y5-DG4" firstAttribute="trailing" secondItem="nKx-w0-HY1" secondAttribute="trailing" id="tdt-bL-EoG"/>
+                            <constraint firstItem="DWz-B4-YdJ" firstAttribute="top" secondItem="nKx-w0-HY1" secondAttribute="bottom" constant="10" id="vkj-WC-QcJ"/>
                             <constraint firstItem="Va3-pb-sTT" firstAttribute="leading" secondItem="vSr-Y5-DG4" secondAttribute="leading" constant="30" id="w0l-Nw-i6a"/>
                             <constraint firstItem="vSr-Y5-DG4" firstAttribute="trailing" secondItem="Va3-pb-sTT" secondAttribute="trailing" constant="30" id="xYO-Ca-5vD"/>
                             <constraint firstItem="DWz-B4-YdJ" firstAttribute="trailing" secondItem="vSr-Y5-DG4" secondAttribute="trailing" id="zUJ-LQ-OJh"/>

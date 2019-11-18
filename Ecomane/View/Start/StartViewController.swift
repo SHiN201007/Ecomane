@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class StartViewController: UIViewController {
   
   @IBOutlet weak var registerButton: UIButton!
   @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var guests: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +45,11 @@ class StartViewController: UIViewController {
     loginButton.layer.cornerRadius = 13.0
     loginButton.setTitleColor(.black, for: .normal)
     loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    
+    guests.backgroundColor = .white
+    guests.layer.cornerRadius = 13.0
+    guests.setTitleColor(.black, for: .normal)
+    guests.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
   }
 
   @IBAction func registerButton(_ sender: Any) {
@@ -58,6 +65,25 @@ class StartViewController: UIViewController {
       withIdentifier: "Login") as? LoginViewController {
       vc.title = "ログイン"
       self.navigationController?.pushViewController(vc, animated: true)
+    }
+  }
+  
+  @IBAction func guests(_ sender: Any) {
+    //匿名ユーザーとしてログイン
+    Auth.auth().signInAnonymously { (result, error) in
+      if (result?.user) != nil{
+        if let currentUser = Auth.auth().currentUser { //データが取得できなかったらスキップ。
+          let user = Firestore.User(id: currentUser.uid)
+          let input = Firestore.Input()
+          user.inputs.insert(input)
+          input.delete()
+          user.save()
+          self.dismiss(animated: true, completion: nil)
+        }
+        //UserDefaultsに値を登録
+        let loginID = 1
+        UserDefaults.standard.set(loginID, forKey: "loginID")
+      }
     }
   }
   

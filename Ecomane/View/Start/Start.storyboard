@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp7-Pj-Mbr">
-                                <rect key="frame" x="40" y="414" width="240" height="40"/>
+                                <rect key="frame" x="40" y="364" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5eb-Ha-5ew"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-tE-cCx">
-                                <rect key="frame" x="40" y="474" width="240" height="40"/>
+                                <rect key="frame" x="40" y="424" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tl6-bc-aaZ"/>
                                 </constraints>
@@ -40,19 +40,30 @@
                                     <action selector="loginButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="DMw-ov-zd8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iua-wL-kMf">
+                                <rect key="frame" x="40" y="484" width="240" height="30"/>
+                                <state key="normal" title="ゲストとしてログイン"/>
+                                <connections>
+                                    <action selector="guests:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="mEP-qz-SiV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="iua-wL-kMf" secondAttribute="trailing" constant="40" id="7rL-xI-z80"/>
                             <constraint firstItem="q97-tE-cCx" firstAttribute="top" secondItem="Rp7-Pj-Mbr" secondAttribute="bottom" constant="20" id="Mnd-ja-wVJ"/>
                             <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="d6b-5K-ea3"/>
                             <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="q97-tE-cCx" secondAttribute="trailing" constant="40" id="hMS-eo-ml0"/>
+                            <constraint firstItem="iua-wL-kMf" firstAttribute="top" secondItem="q97-tE-cCx" secondAttribute="bottom" constant="20" id="lqF-qc-0vW"/>
                             <constraint firstItem="q97-tE-cCx" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="rce-7p-qSq"/>
                             <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="Rp7-Pj-Mbr" secondAttribute="trailing" constant="40" id="uhS-lL-2wo"/>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" constant="150" id="zSl-oh-XMd"/>
+                            <constraint firstItem="iua-wL-kMf" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="xMP-oE-Bf2"/>
+                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" constant="100" id="zSl-oh-XMd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0NR-xn-Vl2"/>
                     </view>
                     <connections>
+                        <outlet property="guests" destination="iua-wL-kMf" id="slH-v2-ryQ"/>
                         <outlet property="loginButton" destination="q97-tE-cCx" id="Shr-aH-1HM"/>
                         <outlet property="registerButton" destination="Rp7-Pj-Mbr" id="xwM-aL-yxi"/>
                     </connections>
