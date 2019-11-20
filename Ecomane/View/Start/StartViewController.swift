@@ -51,6 +51,11 @@ class StartViewController: UIViewController {
     guests.layer.cornerRadius = 13.0
     guests.setTitleColor(.black, for: .normal)
     guests.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    
+    resetPassWord.backgroundColor = .white
+    resetPassWord.layer.cornerRadius = 13.0
+    resetPassWord.setTitleColor(.black, for: .normal)
+    resetPassWord.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
   }
 
   @IBAction func registerButton(_ sender: Any) {
