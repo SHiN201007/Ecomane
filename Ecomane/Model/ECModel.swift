@@ -47,3 +47,9 @@ func categorizeImage(getCategory: String, cell:  ReportTableViewCell) {
     break
   }
 }
+
+
+class CalendarModel {
+  static var coverView: UIView?
+  static var containerView: UIView?
+}

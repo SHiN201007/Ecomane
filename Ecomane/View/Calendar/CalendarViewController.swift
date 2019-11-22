@@ -15,20 +15,29 @@ import Pring
 class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
   
   @IBOutlet weak var calendar: FSCalendar!
+  @IBOutlet weak var coverView: UIView!
+  @IBOutlet weak var containerView: UIView!
   
   var inputDataSouce: DataSource<Firestore.Input>?
   var eventList: [String] = []
+  var count = 0
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    CalendarModel.coverView = coverView
+    CalendarModel.containerView = containerView
+    
     setupCalendar()
+    containerView.layer.cornerRadius = 7.0
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "設定", style: .done, target: self, action: #selector(appSetting))
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    containerView.isHidden = true
+    coverView.isHidden = true
     getListData()
   }
   
@@ -116,6 +125,36 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
     }
 
     return nil
+  }
+  
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+    let color: UIColor = .green
+    
+    return color
+  }
+  
+  // 角丸
+  func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderRadiusFor date: Date) -> CGFloat {
+    return 0.3
+  }
+  
+  func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    if monthPosition == .previous || monthPosition == .next {
+      calendar.setCurrentPage(date, animated: true)
+    }
+    
+    if count == 0 {
+      containerView.isHidden = true
+      count = 1
+    }else if count == 1 {
+      containerView.isHidden = false
+      coverView.isHidden = false
+      coverView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
+      count = 0
+    }else {
+      print("error")
+    }
+    
   }
   
   func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
