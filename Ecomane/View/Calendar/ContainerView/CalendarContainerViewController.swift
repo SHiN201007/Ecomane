@@ -27,8 +27,12 @@ class CalendarContainerViewController: UIViewController {
   func customCSS() {
     inputButton.backgroundColor = .systemOrange
     inputButton.layer.cornerRadius = 13.0
-    inputButton.setTitleColor(.black, for: .normal)
+    inputButton.setTitleColor(.white, for: .normal)
     inputButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    
+    closedButton.layer.cornerRadius = 15.0
+    closedButton.backgroundColor = .blue
+    closedButton.setTitleColor(.white, for: .normal)
   }
   
   @IBAction func inputButton(_ sender: Any) {
