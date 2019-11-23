@@ -15,66 +15,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="exsample@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS7-N4-PL0">
-                                <rect key="frame" x="40" y="294" width="240" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74i-H4-EjN">
+                                <rect key="frame" x="15" y="59" width="290" height="450"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="exsample@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS7-N4-PL0">
+                                        <rect key="frame" x="30" y="129" width="230" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iUu-F8-Kn9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mf2-Yx-lus">
+                                        <rect key="frame" x="30" y="189" width="230" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="i9e-3q-EdL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jx-Sf-Gft">
+                                        <rect key="frame" x="30" y="279" width="230" height="40"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qiE-WO-qVD"/>
+                                        </constraints>
+                                        <state key="normal" title="登録">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButton:" destination="0xF-fx-pLr" eventType="touchUpInside" id="PdO-QP-6Y9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nms-kZ-Wsx">
+                                        <rect key="frame" x="30" y="339" width="230" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="lDb-yb-zHu"/>
+                                        </constraints>
+                                        <state key="normal" title="アカウントをお持ちの方はこちら">
+                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButton:" destination="0xF-fx-pLr" eventType="touchUpInside" id="9g2-vJ-1pi"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新規会員登録" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IH-pw-Lrl">
+                                        <rect key="frame" x="50" y="50" width="190" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="iUu-F8-Kn9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mf2-Yx-lus" secondAttribute="trailing" constant="30" id="6Ex-z2-kF6"/>
+                                    <constraint firstItem="VS7-N4-PL0" firstAttribute="leading" secondItem="74i-H4-EjN" secondAttribute="leading" constant="30" id="C2j-iL-G6t"/>
+                                    <constraint firstItem="nms-kZ-Wsx" firstAttribute="leading" secondItem="74i-H4-EjN" secondAttribute="leading" constant="30" id="CKk-as-Pgb"/>
+                                    <constraint firstItem="Mf2-Yx-lus" firstAttribute="top" secondItem="VS7-N4-PL0" secondAttribute="bottom" constant="20" id="D2y-19-cGe"/>
+                                    <constraint firstItem="VS7-N4-PL0" firstAttribute="top" secondItem="5IH-pw-Lrl" secondAttribute="bottom" constant="50" id="L8a-bc-T7h"/>
+                                    <constraint firstAttribute="trailing" secondItem="5IH-pw-Lrl" secondAttribute="trailing" constant="50" id="NBo-Fd-fG9"/>
+                                    <constraint firstItem="Mf2-Yx-lus" firstAttribute="leading" secondItem="74i-H4-EjN" secondAttribute="leading" constant="30" id="QMz-Qv-wZq"/>
+                                    <constraint firstItem="0Jx-Sf-Gft" firstAttribute="top" secondItem="Mf2-Yx-lus" secondAttribute="bottom" constant="50" id="R4G-mZ-TXk"/>
+                                    <constraint firstItem="nms-kZ-Wsx" firstAttribute="top" secondItem="0Jx-Sf-Gft" secondAttribute="bottom" constant="20" id="UMo-eH-JAw"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Jx-Sf-Gft" secondAttribute="trailing" constant="30" id="Xud-Ng-10l"/>
+                                    <constraint firstAttribute="trailing" secondItem="VS7-N4-PL0" secondAttribute="trailing" constant="30" id="bOu-XF-evP"/>
+                                    <constraint firstItem="5IH-pw-Lrl" firstAttribute="top" secondItem="74i-H4-EjN" secondAttribute="top" constant="50" id="hYq-mF-prn"/>
+                                    <constraint firstAttribute="trailing" secondItem="nms-kZ-Wsx" secondAttribute="trailing" constant="30" id="haO-xL-BX8"/>
+                                    <constraint firstAttribute="height" constant="450" id="mnI-cA-j4L"/>
+                                    <constraint firstItem="5IH-pw-Lrl" firstAttribute="leading" secondItem="74i-H4-EjN" secondAttribute="leading" constant="50" id="pkV-V7-gWn"/>
+                                    <constraint firstItem="0Jx-Sf-Gft" firstAttribute="leading" secondItem="74i-H4-EjN" secondAttribute="leading" constant="30" id="x0P-IT-5cQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mf2-Yx-lus">
-                                <rect key="frame" x="40" y="354" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="i9e-3q-EdL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jx-Sf-Gft">
-                                <rect key="frame" x="40" y="434" width="240" height="40"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="qiE-WO-qVD"/>
-                                </constraints>
-                                <state key="normal" title="登録">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerButton:" destination="0xF-fx-pLr" eventType="touchUpInside" id="PdO-QP-6Y9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nms-kZ-Wsx">
-                                <rect key="frame" x="40" y="494" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lDb-yb-zHu"/>
-                                </constraints>
-                                <state key="normal" title="アカウントをお持ちの方はこちら">
-                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButton:" destination="0xF-fx-pLr" eventType="touchUpInside" id="9g2-vJ-1pi"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.67482376098632812" green="0.8550531268119812" blue="0.93029481172561646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="0Jx-Sf-Gft" secondAttribute="trailing" constant="40" id="4rb-Re-dQy"/>
-                            <constraint firstItem="nms-kZ-Wsx" firstAttribute="top" secondItem="0Jx-Sf-Gft" secondAttribute="bottom" constant="20" id="A7u-pl-Hze"/>
-                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="VS7-N4-PL0" secondAttribute="trailing" constant="40" id="DXO-Mr-F95"/>
-                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="nms-kZ-Wsx" secondAttribute="trailing" constant="40" id="Fbp-xi-aV9"/>
-                            <constraint firstItem="Mf2-Yx-lus" firstAttribute="top" secondItem="VS7-N4-PL0" secondAttribute="bottom" constant="20" id="Iyh-Lj-MkC"/>
-                            <constraint firstItem="VS7-N4-PL0" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="40" id="Qsq-Z0-4Q3"/>
-                            <constraint firstItem="0Jx-Sf-Gft" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="40" id="Tod-0u-vWx"/>
-                            <constraint firstItem="0Jx-Sf-Gft" firstAttribute="top" secondItem="Mf2-Yx-lus" secondAttribute="bottom" constant="40" id="Y87-QL-CXM"/>
-                            <constraint firstItem="VS7-N4-PL0" firstAttribute="centerY" secondItem="dXi-in-rrr" secondAttribute="centerY" constant="30" id="be0-oD-80j"/>
-                            <constraint firstItem="Mf2-Yx-lus" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="40" id="ei9-OS-mcy"/>
-                            <constraint firstItem="CPs-H0-e3g" firstAttribute="trailing" secondItem="Mf2-Yx-lus" secondAttribute="trailing" constant="40" id="tKl-tG-N3p"/>
-                            <constraint firstItem="nms-kZ-Wsx" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="40" id="wZ4-Dp-CQd"/>
+                            <constraint firstItem="74i-H4-EjN" firstAttribute="leading" secondItem="CPs-H0-e3g" secondAttribute="leading" constant="15" id="5mg-rk-vcb"/>
+                            <constraint firstItem="74i-H4-EjN" firstAttribute="centerY" secondItem="dXi-in-rrr" secondAttribute="centerY" id="SBO-PN-6Ou"/>
+                            <constraint firstAttribute="trailing" secondItem="74i-H4-EjN" secondAttribute="trailing" constant="15" id="q7L-jK-tZJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CPs-H0-e3g"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="74i-H4-EjN" id="HCo-lF-mps"/>
                         <outlet property="emailField" destination="VS7-N4-PL0" id="mtx-xB-3Fp"/>
                         <outlet property="loginButton" destination="nms-kZ-Wsx" id="ENj-vt-fvo"/>
                         <outlet property="passwordField" destination="Mf2-Yx-lus" id="Bbs-OR-zBT"/>
@@ -83,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ART-ZZ-P0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="-117"/>
+            <point key="canvasLocation" x="549.375" y="-117.25352112676056"/>
         </scene>
     </scenes>
 </document>

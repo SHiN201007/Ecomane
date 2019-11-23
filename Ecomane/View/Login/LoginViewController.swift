@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var registerButton: UIButton!
+  @IBOutlet weak var resetPassWord: UIButton!
+  @IBOutlet weak var contentView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +25,8 @@ class LoginViewController: UIViewController {
     emailField.delegate = self
     passwordField.delegate = self
     
-    assignbackground()
+    view.backgroundColor = UIColor(red: 181/255, green: 217/255, blue: 235/255, alpha: 1.0)
+    contentView.layer.cornerRadius = 7.0
     customCSS()
   }
   
@@ -36,29 +39,27 @@ class LoginViewController: UIViewController {
     login()
   }
   
-  func assignbackground(){
-      let background = UIImage(named: "bgImage3")
-
-      var imageView : UIImageView!
-      imageView = UIImageView(frame: view.bounds)
-      imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-      imageView.clipsToBounds = true
-      imageView.image = background
-      imageView.center = view.center
-      view.addSubview(imageView)
-      self.view.sendSubviewToBack(imageView)
-  }
-  
   func customCSS() {
+    loginButton.backgroundColor = .systemPink
+    loginButton.layer.cornerRadius = 7.0
+    loginButton.setTitleColor(.white, for: .normal)
+    loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    loginButton.layer.borderColor = UIColor.darkGray.cgColor
+    loginButton.layer.borderWidth = 1.0
+    
     registerButton.backgroundColor = .white
-    registerButton.layer.cornerRadius = 13.0
+    registerButton.layer.cornerRadius = 7.0
     registerButton.setTitleColor(.black, for: .normal)
     registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    registerButton.layer.borderColor = UIColor.darkGray.cgColor
+    registerButton.layer.borderWidth = 1.0
     
-    loginButton.backgroundColor = .systemPink
-    loginButton.layer.cornerRadius = 13.0
-    loginButton.setTitleColor(.white, for: .normal)
-    loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    resetPassWord.backgroundColor = .white
+    resetPassWord.layer.cornerRadius = 7.0
+    resetPassWord.setTitleColor(.black, for: .normal)
+    resetPassWord.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+    registerButton.layer.borderColor = UIColor.darkGray.cgColor
+    resetPassWord.layer.borderWidth = 1.0
   }
   
   @IBAction func registerButton(_ sender: Any) {
@@ -87,6 +88,14 @@ class LoginViewController: UIViewController {
       }
     }
     
+  }
+  
+  @IBAction func reset(_ sender: Any) {
+    if let vc = UIStoryboard(name: "ResetPassWord", bundle: nil).instantiateViewController(
+      withIdentifier: "ResetPassWord") as? ResetPassWordViewController {
+      vc.title = "パスワードを忘れた方"
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
   
 }

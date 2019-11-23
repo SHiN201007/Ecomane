@@ -15,68 +15,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp7-Pj-Mbr">
-                                <rect key="frame" x="40" y="324" width="240" height="40"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC2-pY-Vfd">
+                                <rect key="frame" x="15" y="59" width="290" height="450"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp7-Pj-Mbr">
+                                        <rect key="frame" x="30" y="209" width="230" height="40"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.94901960780000005" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5eb-Ha-5ew"/>
+                                        </constraints>
+                                        <state key="normal" title="アカウントを作成">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="1BQ-RN-kFt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-tE-cCx">
+                                        <rect key="frame" x="30" y="269" width="230" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="tl6-bc-aaZ"/>
+                                        </constraints>
+                                        <state key="normal" title="アカウントをお持ちの方はこちら">
+                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="DMw-ov-zd8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iua-wL-kMf">
+                                        <rect key="frame" x="30" y="329" width="230" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="n0T-PM-7DJ"/>
+                                        </constraints>
+                                        <state key="normal" title="ゲストとしてログイン"/>
+                                        <connections>
+                                            <action selector="guests:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="mEP-qz-SiV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エコまねへようこそ！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jR-ZS-ixE">
+                                        <rect key="frame" x="20" y="80" width="250" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5eb-Ha-5ew"/>
+                                    <constraint firstItem="q97-tE-cCx" firstAttribute="top" secondItem="Rp7-Pj-Mbr" secondAttribute="bottom" constant="20" id="15b-iM-0jX"/>
+                                    <constraint firstAttribute="trailing" secondItem="iua-wL-kMf" secondAttribute="trailing" constant="30" id="38q-U8-xOJ"/>
+                                    <constraint firstItem="iua-wL-kMf" firstAttribute="leading" secondItem="RC2-pY-Vfd" secondAttribute="leading" constant="30" id="7BL-6F-qZq"/>
+                                    <constraint firstAttribute="trailing" secondItem="q97-tE-cCx" secondAttribute="trailing" constant="30" id="8cR-Mp-D66"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rp7-Pj-Mbr" secondAttribute="trailing" constant="30" id="LbZ-6L-Qh3"/>
+                                    <constraint firstItem="iua-wL-kMf" firstAttribute="top" secondItem="q97-tE-cCx" secondAttribute="bottom" constant="20" id="RN2-U8-ziv"/>
+                                    <constraint firstItem="q97-tE-cCx" firstAttribute="leading" secondItem="RC2-pY-Vfd" secondAttribute="leading" constant="30" id="ZIb-tQ-qkj"/>
+                                    <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="top" secondItem="5jR-ZS-ixE" secondAttribute="bottom" constant="100" id="bOm-2y-6F0"/>
+                                    <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="leading" secondItem="RC2-pY-Vfd" secondAttribute="leading" constant="30" id="ewf-Ls-7sP"/>
+                                    <constraint firstAttribute="trailing" secondItem="5jR-ZS-ixE" secondAttribute="trailing" constant="20" id="twc-4I-Mqt"/>
+                                    <constraint firstItem="5jR-ZS-ixE" firstAttribute="leading" secondItem="RC2-pY-Vfd" secondAttribute="leading" constant="20" id="uPl-5Q-3VV"/>
+                                    <constraint firstAttribute="height" constant="450" id="wGN-Cm-XpR"/>
+                                    <constraint firstItem="5jR-ZS-ixE" firstAttribute="top" secondItem="RC2-pY-Vfd" secondAttribute="top" constant="80" id="zXV-J3-bTr"/>
                                 </constraints>
-                                <state key="normal" title="アカウントを作成">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="1BQ-RN-kFt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q97-tE-cCx">
-                                <rect key="frame" x="40" y="384" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="tl6-bc-aaZ"/>
-                                </constraints>
-                                <state key="normal" title="アカウントをお持ちの方はこちら">
-                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButton:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="DMw-ov-zd8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iua-wL-kMf">
-                                <rect key="frame" x="40" y="444" width="240" height="30"/>
-                                <state key="normal" title="ゲストとしてログイン"/>
-                                <connections>
-                                    <action selector="guests:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="mEP-qz-SiV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvO-ds-nyn">
-                                <rect key="frame" x="40" y="494" width="240" height="30"/>
-                                <state key="normal" title="パスワードを忘れた方はこちら"/>
-                                <connections>
-                                    <action selector="reset:" destination="9F5-mN-Lsf" eventType="touchUpInside" id="TZt-Ps-U5m"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.67482376098632812" green="0.8550531268119812" blue="0.93029481172561646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nvO-ds-nyn" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="6Gl-s6-HDP"/>
-                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="iua-wL-kMf" secondAttribute="trailing" constant="40" id="7rL-xI-z80"/>
-                            <constraint firstItem="q97-tE-cCx" firstAttribute="top" secondItem="Rp7-Pj-Mbr" secondAttribute="bottom" constant="20" id="Mnd-ja-wVJ"/>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="d6b-5K-ea3"/>
-                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="q97-tE-cCx" secondAttribute="trailing" constant="40" id="hMS-eo-ml0"/>
-                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="nvO-ds-nyn" secondAttribute="trailing" constant="40" id="iyG-CI-8Q4"/>
-                            <constraint firstItem="iua-wL-kMf" firstAttribute="top" secondItem="q97-tE-cCx" secondAttribute="bottom" constant="20" id="lqF-qc-0vW"/>
-                            <constraint firstItem="q97-tE-cCx" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="rce-7p-qSq"/>
-                            <constraint firstItem="nvO-ds-nyn" firstAttribute="top" secondItem="iua-wL-kMf" secondAttribute="bottom" constant="20" id="uMW-ak-08p"/>
-                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="Rp7-Pj-Mbr" secondAttribute="trailing" constant="40" id="uhS-lL-2wo"/>
-                            <constraint firstItem="iua-wL-kMf" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="40" id="xMP-oE-Bf2"/>
-                            <constraint firstItem="Rp7-Pj-Mbr" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" constant="60" id="zSl-oh-XMd"/>
+                            <constraint firstItem="0NR-xn-Vl2" firstAttribute="trailing" secondItem="RC2-pY-Vfd" secondAttribute="trailing" constant="15" id="IAH-bF-V5g"/>
+                            <constraint firstItem="RC2-pY-Vfd" firstAttribute="leading" secondItem="0NR-xn-Vl2" secondAttribute="leading" constant="15" id="LpG-2d-kYG"/>
+                            <constraint firstItem="RC2-pY-Vfd" firstAttribute="centerY" secondItem="Pil-Ut-QKR" secondAttribute="centerY" id="n9D-0d-1hJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0NR-xn-Vl2"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="RC2-pY-Vfd" id="mPf-d8-4a1"/>
                         <outlet property="guests" destination="iua-wL-kMf" id="slH-v2-ryQ"/>
                         <outlet property="loginButton" destination="q97-tE-cCx" id="Shr-aH-1HM"/>
                         <outlet property="registerButton" destination="Rp7-Pj-Mbr" id="xwM-aL-yxi"/>
-                        <outlet property="resetPassWord" destination="nvO-ds-nyn" id="r7B-6s-Kyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCl-5S-Rds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
