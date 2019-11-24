@@ -109,6 +109,7 @@ class InputViewController: UIViewController {
   }
   
   func setData() {
+    HUD.show(.progress)
     guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
     Firestore.User.get(uid) { (user, error) in
 
@@ -199,6 +200,9 @@ class InputViewController: UIViewController {
   // UIDatePickerのDoneを押したら発火
   @objc func done() {
     todayField?.endEditing(true)
+    categoryField?.endEditing(true)
+    introduceField?.endEditing(true)
+    moneyField?.endEditing(true)
     // 日付のフォーマット
     let formatter = DateFormatter()
     //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
@@ -285,12 +289,19 @@ extension InputViewController: UITableViewDelegate {
   
   // セクションの背景とテキストの色を変更する
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    // 背景色を変更する
+    view.tintColor = .orange
+    let header = view as! UITableViewHeaderFooterView
+    // テキスト色を変更する
+    header.textLabel?.textColor = .white
+    
+    if section == 2 {
       // 背景色を変更する
-      view.tintColor = .orange
-
+      view.tintColor = .white
       let header = view as! UITableViewHeaderFooterView
       // テキスト色を変更する
-      header.textLabel?.textColor = .white
+      header.textLabel?.textColor = .black
+    }
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -350,14 +361,17 @@ extension InputViewController: UITableViewDataSource {
       switch indexPath.row {
       case 0:
         categoryField = cell.inputTextField
+        categoryField?.inputAccessoryView = toolbar
         categoryField?.placeholder = "カテゴリを選択してください"
         categoryField?.isEnabled = false
         categoryField?.borderStyle = .none
       case 1:
         introduceField = cell.inputTextField
+        introduceField?.inputAccessoryView = toolbar
         introduceField?.placeholder = "ex): 晩御飯・スーパー"
       case 2:
         moneyField = cell.inputTextField
+        moneyField?.inputAccessoryView = toolbar
         moneyField?.placeholder = "ex): ¥2500"
         moneyField?.keyboardType = .numberPad
       default:
@@ -409,10 +423,10 @@ extension InputViewController: UICollectionViewDelegate {
 extension InputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
-    todayField?.resignFirstResponder()
-    categoryField?.resignFirstResponder()
-    introduceField?.resignFirstResponder()
-    moneyField?.resignFirstResponder()
+    todayField?.endEditing(true)
+    categoryField?.endEditing(true)
+    introduceField?.endEditing(true)
+    moneyField?.endEditing(true)
     
     return true
   }

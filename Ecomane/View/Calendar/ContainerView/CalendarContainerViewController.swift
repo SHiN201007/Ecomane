@@ -28,7 +28,7 @@ class CalendarContainerViewController: UIViewController {
     tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "calendarCell")
     
     CalendarModel.dayLabel = todaysLabel
-    
+    view.layer.cornerRadius = 7.0
     customCSS()
   }
   

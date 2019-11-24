@@ -11,6 +11,7 @@ import FSCalendar
 import CalculateCalendarLogic
 import Firebase
 import Pring
+import PKHUD
 
 class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
   
@@ -177,6 +178,7 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
   }
   
   private func getListData() {
+    HUD.show(.progress)
     guard let uid: String = Auth.auth().currentUser?.uid else { return }
     // あるuserが持っているbookの一覧を取得する
     let user = Firestore.User(id: uid)
@@ -187,7 +189,7 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
           self.eventList.append(ev ?? "")
         }
         self.calendar.reloadData()
-//        print(self.eventList)
+        HUD.hide()
       }.listen()
   }
 

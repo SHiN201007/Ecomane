@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // ViewControllers on TabBar
     var viewControllers: [UIViewController] = []
 
-    // UITabBar.appearance().tintColor = bgColor
+    UITabBar.appearance().tintColor = .orange
 
     // input画面
     if let inputViewController = UIStoryboard(name: "Input", bundle: nil).instantiateViewController(withIdentifier: "Input") as? InputViewController {
@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       // TabBarのアイコン
       let tabBarIcon = UITabBarItem(title: "入力",
-                                    image: nil,
+                                    image: UIImage(named: "input"),
                                     tag: 0)
       inputViewController.tabBarItem = tabBarIcon
 
@@ -47,7 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       // TabBarのアイコン
       let tabBarIcon = UITabBarItem(title: "カレンダー",
-                                    image: nil,
+                                    image: UIImage(named: "calendar"),
                                     tag: 1)
       calendarViewController.tabBarItem = tabBarIcon
 
@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       // TabBarのアイコン
       let tabBarIcon = UITabBarItem(title: "レポート",
-                                    image: nil,
+                                    image: UIImage(named: "report"),
                                     tag: 2)
       reportViewController.tabBarItem = tabBarIcon
 
