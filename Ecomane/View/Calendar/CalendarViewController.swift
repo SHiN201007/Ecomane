@@ -143,12 +143,19 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
       calendar.setCurrentPage(date, animated: true)
     }
     
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy年MM月dd日"
+    let dataString = formatter.string(from: date)
+    
     if count == 0 {
       containerView.isHidden = true
+      CalendarModel.today = ""
       count = 1
     }else if count == 1 {
       containerView.isHidden = false
       coverView.isHidden = false
+      CalendarModel.today = dataString
+      CalendarModel.dayLabel?.text = dataString
       coverView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
       count = 0
     }else {

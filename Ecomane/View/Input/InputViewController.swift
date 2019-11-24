@@ -92,6 +92,9 @@ class InputViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    if CalendarModel.today != "" {
+      todayField?.text = CalendarModel.today
+    }
     caterogyCollectionView.isHidden = true
     categoryField?.text = ""
     introduceField?.text = ""
