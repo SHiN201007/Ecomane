@@ -69,8 +69,6 @@ class RegisterViewController: UIViewController {
         HUD.hide(afterDelay: 1.0)
       }
       else {
-        print("登録できました")
-        HUD.flash(.success, delay: 1.0)
         self.setdata()
         if let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(
           withIdentifier: "Login") as? LoginViewController {

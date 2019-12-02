@@ -92,7 +92,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Wot-FD-InE"/>
                                     <constraint firstAttribute="width" constant="30" id="hbb-dc-g8t"/>
                                 </constraints>
-                                <state key="normal" title="✖︎" image="close">
+                                <state key="normal" title="✖︎">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -135,7 +135,4 @@
             <point key="canvasLocation" x="1076.25" y="-135.21126760563379"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="close" width="256" height="256"/>
-    </resources>
 </document>

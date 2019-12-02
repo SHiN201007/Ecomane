@@ -33,6 +33,7 @@ class ReportViewController: UIViewController {
   var carPrice: Int?
   var taxPrice: Int?
   var housePrice: Int?
+  var balance = 0
   
   
   override func viewDidLoad() {
@@ -57,7 +58,6 @@ class ReportViewController: UIViewController {
   private func getBalanceData() {
     HUD.show(.progress)
     guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
-    var balance = 0
     Firestore.User.get(uid) { (user, error) in
 
        if let error = error {
@@ -78,8 +78,37 @@ class ReportViewController: UIViewController {
       self.carPrice = user?.carPrice
       self.taxPrice = user?.taxPrice
       
-      balance = user?.balance ?? 0
-      self.balenceLabel.text = "残金：￥\(balance)"
+      self.balance = user?.balance ?? 0
+      self.balenceLabel.text = "残金：￥\(self.balance)"
+      HUD.hide()
+    }
+  }
+  
+  private func reloadBalanceData() {
+    HUD.show(.progress)
+    guard let uid: String = Auth.auth().currentUser?.uid else { return } //データが取得できなかったらスキップ。
+    Firestore.User.get(uid) { (user, error) in
+
+       if let error = error {
+          print(error)
+          return
+       }
+      
+      user?.foodPrice = self.foodPrice ?? 0
+      user?.dailyPrice = self.dailyPrice ?? 0
+      user?.tripPrice = self.tripPrice ?? 0
+      user?.trainPrice = self.trainPrice ?? 0
+      user?.beautyPrice = self.beautyPrice ?? 0
+      user?.fashionPrice = self.fashionPrice ?? 0
+      user?.utilityPrice = self.utilityPrice ?? 0
+      user?.insurancePrice = self.insurancePrice ?? 0
+      user?.phonePrice = self.phonePrice ?? 0
+      user?.studyPrice = self.studyPrice ?? 0
+      user?.carPrice = self.carPrice ?? 0
+      user?.taxPrice = self.taxPrice ?? 0
+      
+      user?.balance = self.balance
+      self.balenceLabel.text = "残金：￥\(user?.balance ?? 0)"
       HUD.hide()
     }
   }
@@ -107,43 +136,82 @@ class ReportViewController: UIViewController {
     
     if foodPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(foodPrice ?? 0), label: "食費"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if dailyPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(dailyPrice ?? 0), label: "日用品"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if tripPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(tripPrice ?? 0), label: "お出かけ"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if trainPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(trainPrice ?? 0), label: "交通費"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if beautyPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(beautyPrice ?? 0), label: "美容"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if fashionPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "衣類"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if utilityPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(foodPrice ?? 0), label: "光熱費"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if insurancePrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(dailyPrice ?? 0), label: "保険"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if phonePrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(tripPrice ?? 0), label: "通信"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if studyPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(trainPrice ?? 0), label: "教育"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if carPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(beautyPrice ?? 0), label: "車両"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if taxPrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "税金"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     if housePrice ?? 0 > 0 {
       dataEntries.append(PieChartDataEntry(value: Double(fashionPrice ?? 0), label: "家賃"))
+    }else {
+      dataEntries.removeAll()
     }
+    
     
     let dataSet = PieChartDataSet(entries: dataEntries as? [ChartDataEntry], label: "データ")
 
@@ -211,5 +279,79 @@ extension ReportViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      self.inputDataSouce?.removeDocument(at: indexPath.row)
+      
+      switch inputDataSouce?[indexPath.row].category {
+        case "食費":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          foodPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "日用品":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          dailyPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "お出かけ":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          tripPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "交通費":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          trainPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "美容費":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          beautyPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "衣類":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          fashionPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "光熱費":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          utilityPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "保険":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          insurancePrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "通信":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          phonePrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "教育":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          studyPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "車両":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          carPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "税金":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          taxPrice? -= price ?? 0
+          self.balance -= price ?? 0
+        case "家賃":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          housePrice? -= price ?? 0
+          self.balance -= price ?? 0
+        // 収入
+        case "給料":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          self.balance -= price ?? 0
+        case "臨時収入":
+          let price = Int(inputDataSouce?[indexPath.row].price ?? "")
+          self.balance -= price ?? 0
+      default:
+        break
+      }
+      reloadBalanceData() //
+      setupPieChart() // 円グラフ反映
+      
+    } else if editingStyle == .insert {
+    }
   }
 }

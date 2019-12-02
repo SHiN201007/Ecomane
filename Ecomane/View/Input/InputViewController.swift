@@ -290,7 +290,7 @@ extension InputViewController: UITableViewDelegate {
   // セクションの背景とテキストの色を変更する
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     // 背景色を変更する
-    view.tintColor = .orange
+    view.tintColor = UIColor(hex: 0xff6633, alpha: 0.5)
     let header = view as! UITableViewHeaderFooterView
     // テキスト色を変更する
     header.textLabel?.textColor = .white
@@ -384,7 +384,7 @@ extension InputViewController: UITableViewDataSource {
     case 2:
       let cell = tableView.dequeueReusableCell(withIdentifier: "doneCell", for: indexPath) as! DoneTableViewCell
       
-      cell.contentView.backgroundColor = .systemGreen
+      cell.contentView.backgroundColor = UIColor(hex: 0xff6633, alpha: 1.0)
       cell.doneLabel.textColor = .white
       return cell
       

@@ -55,6 +55,7 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
     self.calendar.dataSource = self
     self.calendar.delegate = self
     self.calendar.appearance.headerDateFormat = "YYYY年MM月"
+    self.calendar.appearance.headerTitleColor = UIColor(hex: 0xff6633, alpha: 1.0)
     // 曜日設定
     self.calendar.calendarWeekdayView.weekdayLabels[0].text = "日"
     self.calendar.calendarWeekdayView.weekdayLabels[1].text = "月"
@@ -129,7 +130,7 @@ class CalendarViewController: BaseViewController, FSCalendarDataSource, FSCalend
   }
   
   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
-    let color: UIColor = .green
+    let color: UIColor = UIColor(hex: 0xff6633, alpha: 0.5)
     
     return color
   }

@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // ViewControllers on TabBar
     var viewControllers: [UIViewController] = []
 
-    UITabBar.appearance().tintColor = .orange
+    UITabBar.appearance().tintColor = UIColor(hex: 0xff6633, alpha: 1.0)
 
     // input画面
     if let inputViewController = UIStoryboard(name: "Input", bundle: nil).instantiateViewController(withIdentifier: "Input") as? InputViewController {
